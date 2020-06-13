@@ -14,26 +14,4 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response;
-
-import com.fasterxml.jackson.databind.ObjectMapper;
-import org.junit.jupiter.api.Test;
-import rocket4j.json.JsonFile;
-import rocket4j.json.JsonTests;
-
-import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
-
-@JsonTests
-public final class InfoResponseTest {
-
-    private final ObjectMapper objectMapper;
-
-    public InfoResponseTest(final ObjectMapper objectMapper) {
-        this.objectMapper = objectMapper;
-    }
-
-    @Test
-    void deserializeInfoResponseTest(@JsonFile("info-example-result.json") final String json) {
-        assertDoesNotThrow(() -> objectMapper.readValue(json, InfoResponse.class));
-    }
-}
+package rocket4j.json.response.misc;

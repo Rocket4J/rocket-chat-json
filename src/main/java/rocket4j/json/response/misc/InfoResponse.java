@@ -14,14 +14,16 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response;
+package rocket4j.json.response.misc;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.ZonedDateTime;
+
 import org.immutables.value.Value;
+
+import java.time.ZonedDateTime;
 
 @Value.Immutable
 @Value.Enclosing
