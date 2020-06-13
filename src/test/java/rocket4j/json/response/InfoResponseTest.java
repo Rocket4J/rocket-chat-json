@@ -17,7 +17,6 @@
 package rocket4j.json.response;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import java.util.Objects;
 import org.junit.jupiter.api.Test;
 import rocket4j.json.JsonFile;
 import rocket4j.json.JsonTests;
@@ -30,7 +29,7 @@ public final class InfoResponseTest {
     private final ObjectMapper objectMapper;
 
     public InfoResponseTest(final ObjectMapper objectMapper) {
-        this.objectMapper = Objects.requireNonNull(objectMapper);
+        this.objectMapper = objectMapper;
     }
 
     @Test

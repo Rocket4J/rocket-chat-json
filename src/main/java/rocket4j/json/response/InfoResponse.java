@@ -29,47 +29,58 @@ import org.immutables.value.Value;
 @JsonDeserialize(as = ImmutableInfoResponse.class)
 public interface InfoResponse {
 
-    String version();
+    @JsonProperty("success")
+    boolean successful();
 
-    Build build();
-
-    Commit commit();
-
-    @Value.Immutable
-    @JsonSerialize(as = ImmutableInfoResponse.Build.class)
-    @JsonDeserialize(as = ImmutableInfoResponse.Build.class)
-    interface Build {
-
-        String nodeVersion();
-
-        @JsonProperty("arch")
-        String architecture();
-
-        String platform();
-
-        @JsonProperty("cpus")
-        int cpuCount();
-    }
+    Info info();
 
     @Value.Immutable
-    @JsonSerialize(as = ImmutableInfoResponse.Commit.class)
-    @JsonDeserialize(as = ImmutableInfoResponse.Commit.class)
-    interface Commit {
+    @JsonSerialize(as = ImmutableInfoResponse.Info.class)
+    @JsonDeserialize(as = ImmutableInfoResponse.Info.class)
+    interface Info {
 
-        String hash();
+        String version();
 
-        @JsonFormat(
-            shape = JsonFormat.Shape.STRING,
-            pattern = "EEE MMM d HH:mm:ss yyyy Z"
-        )
-        ZonedDateTime date();
+        Build build();
 
-        String author();
+        Commit commit();
 
-        String subject();
+        @Value.Immutable
+        @JsonSerialize(as = ImmutableInfoResponse.Build.class)
+        @JsonDeserialize(as = ImmutableInfoResponse.Build.class)
+        interface Build {
 
-        String tag();
+            String nodeVersion();
 
-        String branch();
+            @JsonProperty("arch")
+            String architecture();
+
+            String platform();
+
+            @JsonProperty("cpus")
+            int cpuCount();
+        }
+
+        @Value.Immutable
+        @JsonSerialize(as = ImmutableInfoResponse.Commit.class)
+        @JsonDeserialize(as = ImmutableInfoResponse.Commit.class)
+        interface Commit {
+
+            String hash();
+
+            @JsonFormat(
+                shape = JsonFormat.Shape.STRING,
+                pattern = "EEE MMM d HH:mm:ss yyyy Z"
+            )
+            ZonedDateTime date();
+
+            String author();
+
+            String subject();
+
+            String tag();
+
+            String branch();
+        }
     }
 }
