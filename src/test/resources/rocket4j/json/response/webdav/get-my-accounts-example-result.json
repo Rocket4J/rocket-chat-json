@@ -1,0 +1,11 @@
+{
+  "accounts": [
+    {
+      "_id": "P3Gru7ocFCd4vpKEs",
+      "server_url": "http://localhost:8080/remote.php/webdav/",
+      "username": "admin",
+      "name": "Webdav account"
+    }
+  ],
+  "success": true
+}
