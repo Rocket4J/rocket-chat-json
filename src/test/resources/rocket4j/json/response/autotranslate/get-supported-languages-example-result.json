@@ -1,0 +1,21 @@
+{
+  "languages": [
+    {
+      "language": "af",
+      "name": "Africâner"
+    },
+    {
+      "language": "sq",
+      "name": "Albanês"
+    },
+    {
+      "language": "de",
+      "name": "Alemão"
+    },
+    {
+      "language": "am",
+      "name": "Amárico"
+    }
+  ],
+  "success": true
+}
