@@ -1,0 +1,12 @@
+{
+  "users": [
+    {
+      "_id": "rocket.cat",
+      "name": "Rocket.Cat",
+      "username": "rocket.cat",
+      "status": "online"
+    }
+  ],
+  "rooms": [],
+  "success": true
+}
