@@ -17,9 +17,7 @@
 package rocket4j.json.response.misc;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-
 import org.junit.jupiter.api.Test;
-
 import rocket4j.json.JsonFile;
 import rocket4j.json.JsonTests;
 
