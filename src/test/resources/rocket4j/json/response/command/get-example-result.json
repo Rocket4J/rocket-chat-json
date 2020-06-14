@@ -1,0 +1,9 @@
+{
+  "command": {
+    "command": "me",
+    "params": "your_message",
+    "description": "Displays_action_text",
+    "clientOnly": false
+  },
+  "success": true
+}
