@@ -1,0 +1,24 @@
+{
+  "emojis": {
+    "update": [
+      {
+        "_id": "S5XvYppoLrLd9JvQm",
+        "name": "teste",
+        "aliases": [],
+        "extension": "jpg",
+        "_updatedAt": "2019-02-18T16:48:35.119Z"
+      },
+      {
+        "_id": "Ro5HD4wKQiYnrbpbg",
+        "name": "aaaaaaaa",
+        "aliases": [
+          "aaaaaa"
+        ],
+        "extension": "png",
+        "_updatedAt": "2019-02-18T16:49:47.310Z"
+      }
+    ],
+    "remove": []
+  },
+  "success": true
+}
