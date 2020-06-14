@@ -1,0 +1,18 @@
+{
+  "permissions": [
+    {
+      "_id": "access-permissions",
+      "roles": [
+        "admin"
+      ],
+      "_updatedAt": "2018-01-25T13:03:20.879Z",
+      "meta": {
+        "revision": 0,
+        "created": 1516980515815,
+        "version": 0
+      },
+      "$loki": 1
+    }
+  ],
+  "success": true
+}
