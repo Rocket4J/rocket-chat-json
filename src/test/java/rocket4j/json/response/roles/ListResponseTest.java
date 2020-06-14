@@ -14,24 +14,26 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response.rooms;
+package rocket4j.json.response.roles;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
-import org.immutables.value.Value;
-import rocket4j.json.pagination.PageData;
-import rocket4j.json.room.Room;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import rocket4j.json.JsonFile;
+import rocket4j.json.JsonTests;
 
-@Value.Immutable
-@JsonSerialize(as = ImmutableAdminRoomsResponse.class)
-@JsonDeserialize(as = ImmutableAdminRoomsResponse.class)
-@SuppressWarnings("immutables:subtype")
-public interface AdminRoomsResponse extends PageData {
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-    List<Room> rooms();
+@JsonTests
+public final class ListResponseTest {
 
-    @JsonProperty("success")
-    boolean successful();
+    private final ObjectMapper objectMapper;
+
+    public ListResponseTest(final ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
+    @Test
+    void deserializeInfoResponseTest(@JsonFile("list-example-result.json") final String json) {
+        assertDoesNotThrow(() -> objectMapper.readValue(json, ListResponse.class));
+    }
 }

@@ -24,9 +24,11 @@ import org.immutables.value.Value;
 import rocket4j.json.pagination.PageData;
 import rocket4j.json.settings.Setting;
 
+
 @Value.Immutable
 @JsonSerialize(as = ImmutablePublicSettingsResponse.class)
 @JsonDeserialize(as = ImmutablePublicSettingsResponse.class)
+@SuppressWarnings("immutables:subtype")
 public interface PublicSettingsResponse extends PageData {
 
     List<Setting> settings();

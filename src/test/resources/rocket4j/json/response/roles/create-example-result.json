@@ -1,0 +1,10 @@
+{
+  "role": {
+    "_id": "newRole",
+    "name": "newRole",
+    "scope": "Subscriptions",
+    "description": "Role description",
+    "_updatedAt": "2018-08-23T03:57:54.603Z"
+  },
+  "success": true
+}

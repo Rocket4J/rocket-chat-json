@@ -1,0 +1,21 @@
+{
+  "users": [
+    {
+      "_id": "voakrL3cHjYBwwRPq",
+      "username": "a",
+      "type": "user",
+      "status": "offline",
+      "active": true,
+      "name": "a"
+    },
+    {
+      "_id": "N2s7KG6YkzgJfXbyn",
+      "username": "b",
+      "type": "user",
+      "status": "offline",
+      "active": true,
+      "name": "b"
+    }
+  ],
+  "success": true
+}

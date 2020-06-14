@@ -1,0 +1,23 @@
+{
+  "roles": {
+    "update": [
+      {
+        "_id": "admin",
+        "description": "Admin",
+        "mandatory2fa": false,
+        "protected": true,
+        "scope": "Users"
+      }
+    ],
+    "remove": [
+      {
+        "_id": "user",
+        "description": "User",
+        "mandatory2fa": false,
+        "protected": true,
+        "scope": "Users"
+      }
+    ]
+  },
+  "success": true
+}

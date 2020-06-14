@@ -14,24 +14,4 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response.rooms;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
-import org.immutables.value.Value;
-import rocket4j.json.pagination.PageData;
-import rocket4j.json.room.Room;
-
-@Value.Immutable
-@JsonSerialize(as = ImmutableAdminRoomsResponse.class)
-@JsonDeserialize(as = ImmutableAdminRoomsResponse.class)
-@SuppressWarnings("immutables:subtype")
-public interface AdminRoomsResponse extends PageData {
-
-    List<Room> rooms();
-
-    @JsonProperty("success")
-    boolean successful();
-}
+package rocket4j.json.role;

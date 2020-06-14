@@ -27,6 +27,7 @@ import rocket4j.json.room.Discussion;
 @Value.Immutable
 @JsonSerialize(as = ImmutableGetDiscussionsResponse.class)
 @JsonDeserialize(as = ImmutableGetDiscussionsResponse.class)
+@SuppressWarnings("immutables:subtype")
 public interface GetDiscussionsResponse extends PageData {
 
     List<Discussion> discussions();

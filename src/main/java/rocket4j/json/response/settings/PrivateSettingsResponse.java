@@ -27,6 +27,7 @@ import rocket4j.json.settings.Setting;
 @Value.Immutable
 @JsonSerialize(as = ImmutablePrivateSettingsResponse.class)
 @JsonDeserialize(as = ImmutablePrivateSettingsResponse.class)
+@SuppressWarnings("immutables:subtype")
 public interface PrivateSettingsResponse extends PageData {
 
     List<Setting> settings();

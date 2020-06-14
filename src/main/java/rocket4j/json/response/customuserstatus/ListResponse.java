@@ -28,6 +28,7 @@ import rocket4j.json.pagination.PageData;
 @Value.Enclosing
 @JsonSerialize(as = ImmutableListResponse.class)
 @JsonDeserialize(as = ImmutableListResponse.class)
+@SuppressWarnings("immutables:subtype")
 public interface ListResponse extends PageData {
 
     List<CustomStatus> statuses();
