@@ -1,0 +1,20 @@
+{
+  "statuses": [
+    {
+      "_id": "oGxJ2irQcPkgFLGef",
+      "name": "status 1",
+      "statusType": "busy",
+      "_updatedAt": "2019-12-09T20:26:06.477Z"
+    },
+    {
+      "_id": "d3TjnQgKWttgaW9Hh",
+      "name": "status 2",
+      "statusType": "online",
+      "_updatedAt": "2019-12-09T20:25:10.884Z"
+    }
+  ],
+  "count": 2,
+  "offset": 0,
+  "total": 4,
+  "success": true
+}
