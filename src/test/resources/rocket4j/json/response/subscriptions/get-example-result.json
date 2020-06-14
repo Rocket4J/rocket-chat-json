@@ -1,0 +1,25 @@
+{
+  "update": [
+    {
+      "t": "c",
+      "ts": "2017-11-25T15:08:17.249Z",
+      "name": "general",
+      "fname": null,
+      "rid": "GENERAL",
+      "u": {
+        "_id": "EoyAmF4mxx5HxJHJB",
+        "username": "rocket.cat",
+        "name": "Rocket Cat"
+      },
+      "open": true,
+      "alert": true,
+      "unread": 1,
+      "userMentions": 1,
+      "groupMentions": 0,
+      "_updatedAt": "2017-11-25T15:08:17.249Z",
+      "_id": "5ALsG3QhpJfdMpyc8"
+    }
+  ],
+  "remove": [],
+  "success": true
+}

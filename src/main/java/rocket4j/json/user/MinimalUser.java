@@ -14,33 +14,25 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response.misc;
+package rocket4j.json.user;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
+import java.util.Optional;
 import org.immutables.value.Value;
-import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
-@Value.Enclosing
-@JsonSerialize(as = ImmutableSpotlightResponse.class)
-@JsonDeserialize(as = ImmutableSpotlightResponse.class)
-public interface SpotlightResponse {
+@JsonSerialize(as = ImmutableMinimalUser.class)
+@JsonDeserialize(as = ImmutableMinimalUser.class)
+public interface MinimalUser {
 
-    List<MinimalUser> users();
+    @JsonProperty("_id")
+    String id();
 
-    List<Room> rooms();
+    String username();
 
-    @JsonProperty("success")
-    boolean successful();
+    Optional<String> name();
 
-    @Value.Immutable
-    @JsonSerialize(as = ImmutableSpotlightResponse.Room.class)
-    @JsonDeserialize(as = ImmutableSpotlightResponse.Room.class)
-    interface Room {
-
-        // TODO
-    }
+    Optional<String> status();
 }

@@ -14,68 +14,66 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response.autotranslate;
+package rocket4j.json.response.subscriptions;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.Optional;
 import org.immutables.value.Value;
 import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
 @Value.Enclosing
-@JsonSerialize(as = ImmutableTranslateMessageResponse.class)
-@JsonDeserialize(as = ImmutableTranslateMessageResponse.class)
-public interface TranslateMessageResponse {
+@JsonSerialize(as = ImmutableGetResponse.class)
+@JsonDeserialize(as = ImmutableGetResponse.class)
+public interface GetResponse {
+
+    List<Subscription> update();
+
+    List<Subscription> remove();
 
     @JsonProperty("success")
     boolean successful();
 
-    Message message();
-
     @Value.Immutable
-    @JsonSerialize(as = ImmutableTranslateMessageResponse.Message.class)
-    @JsonDeserialize(as = ImmutableTranslateMessageResponse.Message.class)
-    interface Message {
+    @JsonSerialize(as = ImmutableGetResponse.Subscription.class)
+    @JsonDeserialize(as = ImmutableGetResponse.Subscription.class)
+    interface Subscription {
 
-        @JsonProperty("_id")
-        String id();
-
-        String rid();
-
-        @JsonProperty("msg")
-        String message();
+        //TODO: Figure out what the h*ck "t" is short for...
+        String t();
 
         @JsonProperty("ts")
         ZonedDateTime timestamp();
 
+        String name();
+
+        // TODO: Figure out what the h*ck "f" is short for...
+        @JsonProperty("fname")
+        Optional<String> fName();
+
+        String rid();
+
         @JsonProperty("u")
         MinimalUser user();
+
+        boolean open();
+
+        boolean alert();
+
+        int unread();
+
+        int userMentions();
+
+        int groupMentions();
 
         @JsonProperty("_updatedAt")
         ZonedDateTime updatedAt();
 
-        List<Mention> mentions();
-
-        List<Channel> channels();
-
-        JsonNode translations();
-
-        @Value.Immutable
-        @JsonSerialize(as = ImmutableTranslateMessageResponse.Mention.class)
-        @JsonDeserialize(as = ImmutableTranslateMessageResponse.Mention.class)
-        interface Mention {
-            //TODO: mention
-        }
-
-        @Value.Immutable
-        @JsonSerialize(as = ImmutableTranslateMessageResponse.Channel.class)
-        @JsonDeserialize(as = ImmutableTranslateMessageResponse.Channel.class)
-        interface Channel {
-            //TODO: Channel
-        }
+        @JsonProperty("_id")
+        String id();
     }
 }

@@ -17,6 +17,7 @@
 package rocket4j.json;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.datatype.jdk8.Jdk8Module;
 import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import org.junit.jupiter.api.extension.ExtensionContext;
 import org.junit.jupiter.api.extension.ParameterContext;
@@ -25,7 +26,8 @@ import org.junit.jupiter.api.extension.ParameterResolver;
 public final class ObjectMapperParameterResolver implements ParameterResolver {
 
     private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper()
-        .registerModule(new JavaTimeModule());
+        .registerModule(new JavaTimeModule())
+        .registerModule(new Jdk8Module());
 
     @Override
     public boolean supportsParameter(
