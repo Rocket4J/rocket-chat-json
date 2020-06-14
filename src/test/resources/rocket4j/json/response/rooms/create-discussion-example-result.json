@@ -1,0 +1,23 @@
+{
+  "discussion": {
+    "rid": "cgk88DHLHexwMaFWh",
+    "name": "WJNEAM7W45wRYitHo",
+    "fname": "Discussion Name",
+    "t": "p",
+    "msgs": 0,
+    "usersCount": 0,
+    "u": {
+      "_id": "rocketchat.internal.admin.test",
+      "username": "rocketchat.internal.admin.test"
+    },
+    "topic": "general",
+    "prid": "GENERAL",
+    "ts": "2019-04-03T01:35:32.271Z",
+    "ro": false,
+    "sysMes": true,
+    "default": false,
+    "_updatedAt": "2019-04-03T01:35:32.280Z",
+    "_id": "cgk88DHLHexwMaFWh"
+  },
+  "success": true
+}

@@ -22,20 +22,15 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.pagination.PageData;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableListResponse.class)
 @JsonDeserialize(as = ImmutableListResponse.class)
-public interface ListResponse {
+public interface ListResponse extends PageData {
 
     List<CustomStatus> statuses();
-
-    int count();
-
-    int offset();
-
-    int total();
 
     @JsonProperty("success")
     boolean successful();

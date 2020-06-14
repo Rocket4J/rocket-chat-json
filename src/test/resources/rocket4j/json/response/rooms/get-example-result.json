@@ -1,0 +1,41 @@
+{
+  "update": [
+    {
+      "_id": "GENERAL",
+      "name": "general",
+      "t": "c",
+      "_updatedAt": "2018-01-21T21:03:43.736Z",
+      "default": true
+    },
+    {
+      "_id": "3WpJQkDHhrWPBvXuWhw5DThnhQmxDWnavu",
+      "t": "d",
+      "_updatedAt": "2018-01-21T21:07:16.123Z"
+    },
+    {
+      "_id": "hw5DThnhQmxDWnavurocket.cat",
+      "t": "d",
+      "_updatedAt": "2018-01-21T21:07:18.510Z"
+    },
+    {
+      "_id": "hw5DThnhQmxDWnavuhw5DThnhQmxDWnavu",
+      "t": "d",
+      "_updatedAt": "2018-01-21T21:07:20.324Z"
+    },
+    {
+      "_id": "EAemRsye7khfr9Stt",
+      "name": "123",
+      "fname": "123",
+      "t": "p",
+      "u": {
+        "_id": "hw5DThnhQmxDWnavu",
+        "username": "user2"
+      },
+      "_updatedAt": "2018-01-24T21:02:04.318Z",
+      "customFields": {},
+      "ro": false
+    }
+  ],
+  "remove": [],
+  "success": true
+}

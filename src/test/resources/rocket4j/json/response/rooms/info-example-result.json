@@ -1,0 +1,23 @@
+{
+  "room": {
+    "_id": "ByehQjC44FwMeiLbX",
+    "name": "testing",
+    "fname": "testing",
+    "t": "c",
+    "msgs": 0,
+    "usersCount": 2,
+    "u": {
+      "_id": "HKKPmF8rZh45GMHWH",
+      "username": "marcos.defendi"
+    },
+    "customFields": {},
+    "broadcast": false,
+    "encrypted": false,
+    "ts": "2020-05-21T13:14:07.070Z",
+    "ro": false,
+    "default": false,
+    "sysMes": true,
+    "_updatedAt": "2020-05-21T13:14:07.096Z"
+  },
+  "success": true
+}

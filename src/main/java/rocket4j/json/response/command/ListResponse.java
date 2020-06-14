@@ -22,19 +22,14 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.command.Command;
+import rocket4j.json.pagination.PageData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableListResponse.class)
 @JsonDeserialize(as = ImmutableListResponse.class)
-public interface ListResponse {
+public interface ListResponse extends PageData {
 
     List<Command> commands();
-
-    int offset();
-
-    int count();
-
-    int total();
 
     @JsonProperty("success")
     boolean successful();

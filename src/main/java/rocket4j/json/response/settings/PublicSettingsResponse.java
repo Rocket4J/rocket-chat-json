@@ -21,20 +21,15 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.pagination.PageData;
 import rocket4j.json.settings.Setting;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutablePublicSettingsResponse.class)
 @JsonDeserialize(as = ImmutablePublicSettingsResponse.class)
-public interface PublicSettingsResponse {
+public interface PublicSettingsResponse extends PageData {
 
     List<Setting> settings();
-
-    int count();
-
-    int offset();
-
-    int total();
 
     @JsonProperty("success")
     boolean successful();

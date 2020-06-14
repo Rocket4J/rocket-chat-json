@@ -1,0 +1,17 @@
+{
+  "rooms": [
+    {
+      "_id": "GENERAL",
+      "t": "c",
+      "name": "general",
+      "usernames": [],
+      "msgs": 98,
+      "usersCount": 38,
+      "default": true
+    }
+  ],
+  "count": 1,
+  "offset": 0,
+  "total": 88,
+  "success": true
+}

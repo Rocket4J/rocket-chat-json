@@ -17,16 +17,12 @@
 package rocket4j.json.response.autotranslate;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.ZonedDateTime;
-import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.user.MinimalUser;
+import rocket4j.json.message.Message;
 
 @Value.Immutable
-@Value.Enclosing
 @JsonSerialize(as = ImmutableTranslateMessageResponse.class)
 @JsonDeserialize(as = ImmutableTranslateMessageResponse.class)
 public interface TranslateMessageResponse {
@@ -35,47 +31,4 @@ public interface TranslateMessageResponse {
     boolean successful();
 
     Message message();
-
-    @Value.Immutable
-    @JsonSerialize(as = ImmutableTranslateMessageResponse.Message.class)
-    @JsonDeserialize(as = ImmutableTranslateMessageResponse.Message.class)
-    interface Message {
-
-        @JsonProperty("_id")
-        String id();
-
-        String rid();
-
-        @JsonProperty("msg")
-        String message();
-
-        @JsonProperty("ts")
-        ZonedDateTime timestamp();
-
-        @JsonProperty("u")
-        MinimalUser user();
-
-        @JsonProperty("_updatedAt")
-        ZonedDateTime updatedAt();
-
-        List<Mention> mentions();
-
-        List<Channel> channels();
-
-        JsonNode translations();
-
-        @Value.Immutable
-        @JsonSerialize(as = ImmutableTranslateMessageResponse.Mention.class)
-        @JsonDeserialize(as = ImmutableTranslateMessageResponse.Mention.class)
-        interface Mention {
-            //TODO: mention
-        }
-
-        @Value.Immutable
-        @JsonSerialize(as = ImmutableTranslateMessageResponse.Channel.class)
-        @JsonDeserialize(as = ImmutableTranslateMessageResponse.Channel.class)
-        interface Channel {
-            //TODO: Channel
-        }
-    }
 }

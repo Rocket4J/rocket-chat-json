@@ -21,10 +21,10 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.room.Room;
 import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
-@Value.Enclosing
 @JsonSerialize(as = ImmutableSpotlightResponse.class)
 @JsonDeserialize(as = ImmutableSpotlightResponse.class)
 public interface SpotlightResponse {
@@ -35,12 +35,4 @@ public interface SpotlightResponse {
 
     @JsonProperty("success")
     boolean successful();
-
-    @Value.Immutable
-    @JsonSerialize(as = ImmutableSpotlightResponse.Room.class)
-    @JsonDeserialize(as = ImmutableSpotlightResponse.Room.class)
-    interface Room {
-
-        // TODO
-    }
 }

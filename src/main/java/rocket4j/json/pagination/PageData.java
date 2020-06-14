@@ -14,23 +14,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response.settings;
+package rocket4j.json.pagination;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.pagination.PageData;
-import rocket4j.json.settings.Setting;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutablePrivateSettingsResponse.class)
-@JsonDeserialize(as = ImmutablePrivateSettingsResponse.class)
-public interface PrivateSettingsResponse extends PageData {
+@JsonSerialize(as = ImmutablePageData.class)
+@JsonDeserialize(as = ImmutablePageData.class)
+public interface PageData {
 
-    List<Setting> settings();
+    int count();
 
-    @JsonProperty("success")
-    boolean successful();
+    int offset();
+
+    int total();
 }
