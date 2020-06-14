@@ -1,0 +1,19 @@
+{
+  "oauthApps": [
+    {
+      "_id": "zapier",
+      "name": "Zapier",
+      "active": true,
+      "clientId": "zapier",
+      "clientSecret": "RTK6TlndaCIolhQhZ7_KHIGOKj41RnlaOq_o-7JKwLr",
+      "redirectUri": "https://zapier.com/dashboard/auth/oauth/return/RocketChatDevAPI/",
+      "_createdAt": "2019-10-17T22:55:32.787Z",
+      "_createdBy": {
+        "_id": "system",
+        "username": "system"
+      },
+      "_updatedAt": "2019-10-17T22:55:32.787Z"
+    }
+  ],
+  "success": true
+}
