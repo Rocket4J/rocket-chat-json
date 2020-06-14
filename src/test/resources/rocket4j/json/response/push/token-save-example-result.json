@@ -1,0 +1,14 @@
+{
+  "result": {
+    "token": {
+      "gcm": "TOKEN"
+    },
+    "appName": "RocketAPP",
+    "userId": "52d5Rw8LT3TeDa59Z",
+    "enabled": true,
+    "createdAt": "2018-09-11T18:22:55.006Z",
+    "updatedAt": "2018-09-11T18:22:55.006Z",
+    "_id": "DMMjKG2hFoLvM2hk7"
+  },
+  "success": true
+}
