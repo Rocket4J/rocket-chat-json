@@ -1,0 +1,16 @@
+{
+  "settings": [
+    {
+      "_id": "API_Allow_Infinite_Count",
+      "value": true
+    },
+    {
+      "_id": "API_CORS_Origin",
+      "value": "*"
+    }
+  ],
+  "count": 50,
+  "offset": 0,
+  "total": 299,
+  "success": true
+}

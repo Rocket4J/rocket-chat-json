@@ -1,0 +1,42 @@
+{
+  "services": [
+    {
+      "_id": "iJeY7x4wxnh2p3pLr",
+      "name": "facebook",
+      "clientId": "test",
+      "buttonLabelText": "test",
+      "buttonColor": "#13679A",
+      "buttonLabelColor": "#FFFFFF",
+      "custom": false
+    },
+    {
+      "_id": "iJeY7x4wxnh2p3pLr",
+      "name": "twitter",
+      "clientId": "test",
+      "buttonLabelText": "",
+      "buttonColor": "",
+      "buttonLabelColor": "",
+      "custom": false
+    },
+    {
+      "_id": "5RQ4SBL3NuZKsqxaF",
+      "service": "test",
+      "clientId": "test",
+      "custom": true,
+      "serverURL": "/test/test",
+      "tokenPath": "/oauth/token",
+      "identityPath": "/me",
+      "authorizePath": "/oauth/authorize",
+      "scope": "openid",
+      "buttonLabelText": "test",
+      "buttonLabelColor": "#FFFFFF",
+      "loginStyle": "popup",
+      "buttonColor": "#13679A",
+      "tokenSentVia": "payload",
+      "identityTokenSentVia": "default",
+      "usernameField": "dfsgdfgdfgdfgsd",
+      "mergeUsers": true
+    }
+  ],
+  "success": true
+}

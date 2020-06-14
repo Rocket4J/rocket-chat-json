@@ -1,0 +1,16 @@
+{
+  "settings": [
+    {
+      "_id": "API_Drupal_URL",
+      "value": ""
+    },
+    {
+      "_id": "API_Embed",
+      "value": true
+    }
+  ],
+  "count": 50,
+  "offset": 0,
+  "total": 299,
+  "success": true
+}
