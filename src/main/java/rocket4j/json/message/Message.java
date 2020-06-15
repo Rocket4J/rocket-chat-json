@@ -59,6 +59,15 @@ public interface Message {
 
     Optional<JsonNode> translations();
 
+    //Live chat specific Message data
+    Optional<String> token();
+
+    Optional<String> alias();
+
+    Optional<Boolean> newRoom();
+
+    Optional<Boolean> showConnecting();
+
     @Value.Immutable
     @JsonSerialize(as = ImmutableMessage.File.class)
     @JsonDeserialize(as = ImmutableMessage.File.class)

@@ -18,6 +18,8 @@ package rocket4j.json.user;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
+import java.util.Optional;
 import org.immutables.value.Value;
 
 @Value.Immutable
@@ -29,4 +31,6 @@ public interface RoleUser extends MinimalUser {
     String type();
 
     boolean active();
+
+    Optional<List<String>> roles();
 }

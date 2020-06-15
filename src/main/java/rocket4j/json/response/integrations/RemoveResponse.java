@@ -14,23 +14,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.message;
+package rocket4j.json.response.integrations;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
+import rocket4j.json.integration.Integration;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableLiveChatMessage.class)
-@JsonDeserialize(as = ImmutableLiveChatMessage.class)
+@JsonSerialize(as = ImmutableRemoveResponse.class)
+@JsonDeserialize(as = ImmutableRemoveResponse.class)
 @SuppressWarnings("immutables:subtype")
-public interface LiveChatMessage extends Message {
+public interface RemoveResponse extends Response {
 
-    String token();
-
-    String alias();
-
-    boolean newRoom();
-
-    boolean showConnecting();
+    Integration integration();
 }

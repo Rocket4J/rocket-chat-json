@@ -19,10 +19,12 @@ package rocket4j.json.user;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
 
 @Value.Immutable
+@Value.Enclosing
 @JsonSerialize(as = ImmutableMinimalUser.class)
 @JsonDeserialize(as = ImmutableMinimalUser.class)
 public interface MinimalUser {
@@ -35,4 +37,16 @@ public interface MinimalUser {
     Optional<String> name();
 
     Optional<String> status();
+
+    Optional<List<Email>> emails();
+
+    @Value.Immutable
+    @JsonSerialize(as = ImmutableMinimalUser.Email.class)
+    @JsonDeserialize(as = ImmutableMinimalUser.Email.class)
+    interface Email {
+
+        String address();
+
+        boolean verified();
+    }
 }

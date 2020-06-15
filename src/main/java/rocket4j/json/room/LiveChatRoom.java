@@ -24,7 +24,6 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
-import rocket4j.json.message.LiveChatMessage;
 import rocket4j.json.user.InquiryUser;
 import rocket4j.json.user.LiveChatUser;
 
@@ -48,8 +47,6 @@ public interface LiveChatRoom extends Room {
     boolean waitingResponse();
 
     String departmentId();
-
-    LiveChatMessage lastMessage();
 
     Metrics metrics();
 

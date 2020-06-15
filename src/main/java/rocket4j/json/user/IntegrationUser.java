@@ -14,22 +14,27 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.pagination;
+package rocket4j.json.user;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.ZonedDateTime;
 import org.immutables.value.Value;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutablePageData.class)
-@JsonDeserialize(as = ImmutablePageData.class)
-public interface PageData {
+@JsonSerialize(as = ImmutableIntegrationUser.class)
+@JsonDeserialize(as = ImmutableIntegrationUser.class)
+@SuppressWarnings("immutables:subtype")
+public interface IntegrationUser extends MinimalUser, RoleUser {
 
-    @JsonAlias({"count", "items"})
-    int count();
+    @JsonProperty("_updatedAt")
+    ZonedDateTime updatedAt();
 
-    int offset();
+    ZonedDateTime createdAt();
 
-    int total();
+    boolean requirePasswordChange();
+
+    JsonNode settings();
 }

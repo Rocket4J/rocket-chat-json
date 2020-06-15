@@ -14,22 +14,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.pagination;
+package rocket4j.json.response.integrations;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.integration.Integration;
+import rocket4j.json.pagination.PageData;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutablePageData.class)
-@JsonDeserialize(as = ImmutablePageData.class)
-public interface PageData {
+@JsonSerialize(as = ImmutableListResponse.class)
+@JsonDeserialize(as = ImmutableListResponse.class)
+@SuppressWarnings("immutables:subtype")
+public interface ListResponse extends Response, PageData {
 
-    @JsonAlias({"count", "items"})
-    int count();
-
-    int offset();
-
-    int total();
+    List<Integration> integrations();
 }

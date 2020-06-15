@@ -14,7 +14,7 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.room;
+package rocket4j.json.integration;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
@@ -24,50 +24,57 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
-import rocket4j.json.message.Message;
 import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableRoom.class)
-@JsonDeserialize(as = ImmutableRoom.class)
-@SuppressWarnings("immutables:subtype")
-public interface Room extends MinimalRoom {
+@JsonSerialize(as = ImmutableIntegration.class)
+@JsonDeserialize(as = ImmutableIntegration.class)
+public interface Integration {
+
+    String name();
+
+    boolean enabled();
+
+    String username();
+
+    List<String> urls();
+
+    @JsonProperty("channel")
+    List<String> channels();
+
+    Optional<String> event();
+
+    Optional<String> alias();
+
+    Optional<String> avatar();
+
+    Optional<String> type();
+
+    Optional<String> userId();
+
+    @JsonProperty("_createdAt")
+    Optional<ZonedDateTime> createdAt();
+
+    @JsonProperty("_createdBy")
+    Optional<MinimalUser> createdBy();
 
     @JsonProperty("_updatedAt")
     Optional<ZonedDateTime> updatedAt();
 
-    Optional<List<String>> usernames();
+    @JsonProperty("_id")
+    Optional<String> id();
 
-    @JsonProperty("msgs")
-    Optional<Integer> messages();
+    Optional<List<String>> triggerWords();
 
-    Optional<Integer> usersCount();
+    Optional<String> token();
 
-    @JsonProperty("default")
-    Optional<Boolean> defaultRoom();
+    Optional<JsonNode> script();
 
-    @JsonProperty("u")
-    Optional<MinimalUser> user();
+    Optional<Boolean> scriptEnabled();
 
-    Optional<JsonNode> customFields();
+    Optional<Boolean> impersonateUser();
 
-    @JsonProperty("ro")
-    Optional<Boolean> readOnly();
+    Optional<JsonNode> scriptCompiled();
 
-    Optional<Boolean> broadcast();
-
-    Optional<Boolean> encrypted();
-
-    @JsonProperty("sysMes")
-    Optional<Boolean> systemMessage();
-
-    @JsonProperty("ts")
-    Optional<ZonedDateTime> timestamp();
-
-    @JsonProperty("lm")
-    Optional<ZonedDateTime> lastMessageTimestamp();
-
-    Optional<Message> lastMessage();
-
-    Optional<ZonedDateTime> jitsiTimeout();
+    Optional<JsonNode> scriptError();
 }

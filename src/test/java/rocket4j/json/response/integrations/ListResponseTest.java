@@ -14,22 +14,26 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.pagination;
+package rocket4j.json.response.integrations;
 
-import com.fasterxml.jackson.annotation.JsonAlias;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import org.immutables.value.Value;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import rocket4j.json.JsonFile;
+import rocket4j.json.JsonTests;
 
-@Value.Immutable
-@JsonSerialize(as = ImmutablePageData.class)
-@JsonDeserialize(as = ImmutablePageData.class)
-public interface PageData {
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-    @JsonAlias({"count", "items"})
-    int count();
+@JsonTests
+public final class ListResponseTest {
 
-    int offset();
+    private final ObjectMapper objectMapper;
 
-    int total();
+    public ListResponseTest(final ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
+    @Test
+    void deserializeInfoResponseTest(@JsonFile("list-example-result.json") final String json) {
+        assertDoesNotThrow(() -> objectMapper.readValue(json, ListResponse.class));
+    }
 }
