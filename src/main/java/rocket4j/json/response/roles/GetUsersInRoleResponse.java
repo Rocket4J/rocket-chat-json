@@ -16,20 +16,18 @@
  */
 package rocket4j.json.response.roles;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 import rocket4j.json.user.RoleUser;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableGetUsersInRoleResponse.class)
 @JsonDeserialize(as = ImmutableGetUsersInRoleResponse.class)
-public interface GetUsersInRoleResponse {
+@SuppressWarnings("immutables:subtype")
+public interface GetUsersInRoleResponse extends Response {
 
     List<RoleUser> users();
-
-    @JsonProperty("success")
-    boolean successful();
 }

@@ -16,16 +16,14 @@
  */
 package rocket4j.json.response.rooms;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableFavoriteResponse.class)
 @JsonDeserialize(as = ImmutableFavoriteResponse.class)
-public interface FavoriteResponse {
-
-    @JsonProperty("success")
-    boolean successful();
+@SuppressWarnings("immutables:subtype")
+public interface FavoriteResponse extends Response {
 }

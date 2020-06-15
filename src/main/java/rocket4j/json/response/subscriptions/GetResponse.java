@@ -23,20 +23,19 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableGetResponse.class)
 @JsonDeserialize(as = ImmutableGetResponse.class)
-public interface GetResponse {
+@SuppressWarnings("immutables:subtype")
+public interface GetResponse extends Response {
 
     List<Subscription> update();
 
     List<Subscription> remove();
-
-    @JsonProperty("success")
-    boolean successful();
 
     @Value.Immutable
     @JsonSerialize(as = ImmutableGetResponse.Subscription.class)

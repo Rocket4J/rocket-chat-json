@@ -14,39 +14,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response.customuserstatus;
+package rocket4j.json.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.ZonedDateTime;
-import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.pagination.PageData;
-import rocket4j.json.response.Response;
 
 @Value.Immutable
-@Value.Enclosing
-@JsonSerialize(as = ImmutableListResponse.class)
-@JsonDeserialize(as = ImmutableListResponse.class)
-@SuppressWarnings("immutables:subtype")
-public interface ListResponse extends Response, PageData {
+@JsonSerialize(as = ImmutableResponse.class)
+@JsonDeserialize(as = ImmutableResponse.class)
+public interface Response {
 
-    List<CustomStatus> statuses();
-
-    @Value.Immutable
-    @JsonSerialize(as = ImmutableListResponse.CustomStatus.class)
-    @JsonDeserialize(as = ImmutableListResponse.CustomStatus.class)
-    interface CustomStatus {
-
-        @JsonProperty("_id")
-        String id();
-
-        String name();
-
-        String statusType();
-
-        @JsonProperty("_updatedAt")
-        ZonedDateTime updatedAt();
-    }
+    @JsonProperty("success")
+    boolean successful();
 }

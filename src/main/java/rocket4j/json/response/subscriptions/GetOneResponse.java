@@ -23,18 +23,17 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableGetOneResponse.class)
 @JsonDeserialize(as = ImmutableGetOneResponse.class)
-public interface GetOneResponse {
+@SuppressWarnings("immutables:subtype")
+public interface GetOneResponse extends Response {
 
     Subscription subscription();
-
-    @JsonProperty("success")
-    boolean successful();
 
     @Value.Immutable
     @JsonSerialize(as = ImmutableGetOneResponse.Subscription.class)

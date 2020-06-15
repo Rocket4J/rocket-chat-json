@@ -16,20 +16,18 @@
  */
 package rocket4j.json.response.oauthapps;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.oauth.App;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableListResponse.class)
 @JsonDeserialize(as = ImmutableListResponse.class)
-public interface ListResponse {
+@SuppressWarnings("immutables:subtype")
+public interface ListResponse extends Response {
 
     List<App> oauthApps();
-
-    @JsonProperty("success")
-    boolean successful();
 }

@@ -16,23 +16,21 @@
  */
 package rocket4j.json.response.emoji;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.emoji.Emoji;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableListResponse.class)
 @JsonDeserialize(as = ImmutableListResponse.class)
-public interface ListResponse {
+@SuppressWarnings("immutables:subtype")
+public interface ListResponse extends Response {
 
     Emojis emojis();
-
-    @JsonProperty("success")
-    boolean successful();
 
     @Value.Immutable
     @JsonSerialize(as = ImmutableListResponse.Emojis.class)

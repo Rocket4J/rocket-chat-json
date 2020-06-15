@@ -16,19 +16,17 @@
  */
 package rocket4j.json.response.rooms;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 import rocket4j.json.message.Message;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableUploadResponse.class)
 @JsonDeserialize(as = ImmutableUploadResponse.class)
-public interface UploadResponse {
+@SuppressWarnings("immutables:subtype")
+public interface UploadResponse extends Response {
 
     Message message();
-
-    @JsonProperty("success")
-    boolean successful();
 }

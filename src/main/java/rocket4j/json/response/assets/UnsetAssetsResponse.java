@@ -16,16 +16,15 @@
  */
 package rocket4j.json.response.assets;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableUnsetAssetsResponse.class)
 @JsonDeserialize(as = ImmutableUnsetAssetsResponse.class)
-public interface UnsetAssetsResponse {
+@SuppressWarnings("immutables:subtype")
+public interface UnsetAssetsResponse extends Response {
 
-    @JsonProperty("success")
-    boolean successful();
 }

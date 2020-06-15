@@ -21,15 +21,14 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableGetMyAccountsResponse.class)
 @JsonDeserialize(as = ImmutableGetMyAccountsResponse.class)
-public interface GetMyAccountsResponse {
-
-    @JsonProperty("success")
-    boolean successful();
+@SuppressWarnings("immutables:subtype")
+public interface GetMyAccountsResponse extends Response {
 
     List<Account> accounts();
 

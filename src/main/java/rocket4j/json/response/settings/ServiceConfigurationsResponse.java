@@ -16,20 +16,18 @@
  */
 package rocket4j.json.response.settings;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableServiceConfigurationsResponse.class)
 @JsonDeserialize(as = ImmutableServiceConfigurationsResponse.class)
-public interface ServiceConfigurationsResponse {
+@SuppressWarnings("immutables:subtype")
+public interface ServiceConfigurationsResponse extends Response {
 
     List<JsonNode> configurations();
-
-    @JsonProperty("success")
-    boolean successful();
 }

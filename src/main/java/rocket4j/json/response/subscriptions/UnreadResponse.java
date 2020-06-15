@@ -16,16 +16,15 @@
  */
 package rocket4j.json.response.subscriptions;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableUnreadResponse.class)
 @JsonDeserialize(as = ImmutableUnreadResponse.class)
-public interface UnreadResponse {
+@SuppressWarnings("immutables:subtype")
+public interface UnreadResponse extends Response {
 
-    @JsonProperty("success")
-    boolean successful();
 }

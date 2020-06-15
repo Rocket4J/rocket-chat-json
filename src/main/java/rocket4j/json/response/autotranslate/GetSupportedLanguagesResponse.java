@@ -16,20 +16,18 @@
  */
 package rocket4j.json.response.autotranslate;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableGetSupportedLanguagesResponse.class)
 @JsonDeserialize(as = ImmutableGetSupportedLanguagesResponse.class)
-public interface GetSupportedLanguagesResponse {
-
-    @JsonProperty("success")
-    boolean successful();
+@SuppressWarnings("immutables:subtype")
+public interface GetSupportedLanguagesResponse extends Response {
 
     List<Language> languages();
 

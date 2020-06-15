@@ -21,17 +21,16 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableTokenSaveResponse.class)
 @JsonDeserialize(as = ImmutableTokenSaveResponse.class)
-public interface TokenSaveResponse {
+@SuppressWarnings("immutables:subtype")
+public interface TokenSaveResponse extends Response {
 
     Result result();
-
-    @JsonProperty("success")
-    boolean successful();
 
     @Value.Immutable
     @JsonSerialize(as = ImmutableTokenSaveResponse.Result.class)

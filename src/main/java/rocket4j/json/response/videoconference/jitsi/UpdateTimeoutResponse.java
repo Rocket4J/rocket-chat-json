@@ -16,19 +16,17 @@
  */
 package rocket4j.json.response.videoconference.jitsi;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableUpdateTimeoutResponse.class)
 @JsonDeserialize(as = ImmutableUpdateTimeoutResponse.class)
-public interface UpdateTimeoutResponse {
+@SuppressWarnings("immutables:subtype")
+public interface UpdateTimeoutResponse extends Response {
 
     ZonedDateTime jitsiTimeout();
-
-    @JsonProperty("success")
-    boolean successful();
 }

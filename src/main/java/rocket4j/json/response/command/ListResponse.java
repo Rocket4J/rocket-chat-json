@@ -16,22 +16,19 @@
  */
 package rocket4j.json.response.command;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.command.Command;
 import rocket4j.json.pagination.PageData;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableListResponse.class)
 @JsonDeserialize(as = ImmutableListResponse.class)
 @SuppressWarnings("immutables:subtype")
-public interface ListResponse extends PageData {
+public interface ListResponse extends Response, PageData {
 
     List<Command> commands();
-
-    @JsonProperty("success")
-    boolean successful();
 }

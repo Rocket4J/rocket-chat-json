@@ -16,12 +16,12 @@
  */
 package rocket4j.json.response.settings;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.pagination.PageData;
+import rocket4j.json.response.Response;
 import rocket4j.json.settings.Setting;
 
 
@@ -29,10 +29,7 @@ import rocket4j.json.settings.Setting;
 @JsonSerialize(as = ImmutablePublicSettingsResponse.class)
 @JsonDeserialize(as = ImmutablePublicSettingsResponse.class)
 @SuppressWarnings("immutables:subtype")
-public interface PublicSettingsResponse extends PageData {
+public interface PublicSettingsResponse extends Response, PageData {
 
     List<Setting> settings();
-
-    @JsonProperty("success")
-    boolean successful();
 }

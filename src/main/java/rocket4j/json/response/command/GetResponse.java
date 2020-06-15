@@ -16,19 +16,17 @@
  */
 package rocket4j.json.response.command;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 import rocket4j.json.command.Command;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableGetResponse.class)
 @JsonDeserialize(as = ImmutableGetResponse.class)
-public interface GetResponse {
+@SuppressWarnings("immutables:subtype")
+public interface GetResponse extends Response {
 
     Command command();
-
-    @JsonProperty("success")
-    boolean successful();
 }

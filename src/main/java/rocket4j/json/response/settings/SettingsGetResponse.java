@@ -21,17 +21,16 @@ import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableSettingsGetResponse.class)
 @JsonDeserialize(as = ImmutableSettingsGetResponse.class)
-public interface SettingsGetResponse {
+@SuppressWarnings("immutables:subtype")
+public interface SettingsGetResponse extends Response {
 
     @JsonProperty("_id")
     String id();
 
     JsonNode value();
-
-    @JsonProperty("success")
-    boolean successful();
 }

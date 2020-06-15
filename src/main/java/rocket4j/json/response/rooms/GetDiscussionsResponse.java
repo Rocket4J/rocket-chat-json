@@ -16,22 +16,19 @@
  */
 package rocket4j.json.response.rooms;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.pagination.PageData;
+import rocket4j.json.response.Response;
 import rocket4j.json.room.Discussion;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableGetDiscussionsResponse.class)
 @JsonDeserialize(as = ImmutableGetDiscussionsResponse.class)
 @SuppressWarnings("immutables:subtype")
-public interface GetDiscussionsResponse extends PageData {
+public interface GetDiscussionsResponse extends Response, PageData {
 
     List<Discussion> discussions();
-
-    @JsonProperty("success")
-    boolean successful();
 }

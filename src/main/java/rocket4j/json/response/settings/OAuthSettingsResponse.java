@@ -22,18 +22,16 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableOAuthSettingsResponse.class)
 @JsonDeserialize(as = ImmutableOAuthSettingsResponse.class)
-public interface OAuthSettingsResponse {
+@SuppressWarnings("immutables:subtype")
+public interface OAuthSettingsResponse extends Response {
 
     List<OAuthService> services();
-
-    @JsonProperty("success")
-    boolean successful();
-
 
     @Value.Immutable
     @JsonSerialize(as = ImmutableOAuthSettingsResponse.OAuthService.class)

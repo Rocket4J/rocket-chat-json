@@ -16,16 +16,14 @@
  */
 package rocket4j.json.response.push;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableTokenDeleteResponse.class)
 @JsonDeserialize(as = ImmutableTokenDeleteResponse.class)
-public interface TokenDeleteResponse {
-
-    @JsonProperty("success")
-    boolean successful();
+@SuppressWarnings("immutables:subtype")
+public interface TokenDeleteResponse extends Response {
 }

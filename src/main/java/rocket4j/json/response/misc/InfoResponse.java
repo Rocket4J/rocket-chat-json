@@ -22,15 +22,14 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableInfoResponse.class)
 @JsonDeserialize(as = ImmutableInfoResponse.class)
-public interface InfoResponse {
-
-    @JsonProperty("success")
-    boolean successful();
+@SuppressWarnings("immutables:subtype")
+public interface InfoResponse extends Response {
 
     Info info();
 

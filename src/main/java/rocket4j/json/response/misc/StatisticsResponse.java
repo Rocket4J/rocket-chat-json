@@ -22,15 +22,14 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @Value.Enclosing
 @JsonSerialize(as = ImmutableStatisticsResponse.class)
 @JsonDeserialize(as = ImmutableStatisticsResponse.class)
-public interface StatisticsResponse {
-
-    @JsonProperty("success")
-    boolean successful();
+@SuppressWarnings("immutables:subtype")
+public interface StatisticsResponse extends Response {
 
     Statistics statistics();
 

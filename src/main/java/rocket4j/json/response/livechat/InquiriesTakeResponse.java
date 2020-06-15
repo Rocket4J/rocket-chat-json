@@ -16,19 +16,17 @@
  */
 package rocket4j.json.response.livechat;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 import rocket4j.json.livechat.Inquiry;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableInquiriesTakeResponse.class)
 @JsonDeserialize(as = ImmutableInquiriesTakeResponse.class)
-public interface InquiriesTakeResponse {
+@SuppressWarnings("immutables:subtype")
+public interface InquiriesTakeResponse extends Response {
 
     Inquiry inquiry();
-
-    @JsonProperty("success")
-    boolean successful();
 }
