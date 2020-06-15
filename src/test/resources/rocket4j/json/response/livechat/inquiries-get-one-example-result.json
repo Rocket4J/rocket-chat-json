@@ -1,0 +1,19 @@
+{
+  "inquiry": {
+    "_id": "EMXtMA7mPPNkQtWWq",
+    "rid": "MA6HRhkEdRGATfEbh",
+    "name": "inquiry test",
+    "ts": "2019-12-13T18:54:25.352Z",
+    "message": "",
+    "status": "queued",
+    "v": {
+      "_id": "rLitbjv7e9WyLBCR4",
+      "username": "guest-14",
+      "token": "btzu0qdm0sjsn7aqm78kzr",
+      "status": "offline"
+    },
+    "t": "l",
+    "_updatedAt": "2019-12-13T19:33:13.255Z"
+  },
+  "success": true
+}

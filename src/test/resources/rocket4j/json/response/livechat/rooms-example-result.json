@@ -1,0 +1,64 @@
+{
+  "rooms": [
+    {
+      "_id": "9dQMveZhqxiDgCM3B",
+      "msgs": 1,
+      "usersCount": 1,
+      "lm": "2019-08-09T20:18:02.350Z",
+      "fname": "Marcos Defendi",
+      "t": "l",
+      "ts": "2019-08-09T20:18:02.108Z",
+      "v": {
+        "_id": "xh45w4y7oPW5SiMJu",
+        "username": "guest-4",
+        "token": "xn5hdkyptei11m07f3me",
+        "status": "online"
+      },
+      "servedBy": {
+        "_id": "3kyWm8PsmwhC7xgwg",
+        "username": "marcos",
+        "ts": "2019-08-09T20:18:02.109Z"
+      },
+      "cl": false,
+      "open": true,
+      "waitingResponse": true,
+      "departmentId": "xnmXQmytuvxp2TuSC",
+      "_updatedAt": "2019-08-09T20:19:34.856Z",
+      "lastMessage": {
+        "_id": "TBEz7zSCBaKsfyrzc",
+        "rid": "9dQMveZhqxiDgCM3B",
+        "msg": "Hello",
+        "token": "xn5hdkyptei11m07f3me",
+        "alias": "Marcos Defendi",
+        "ts": "2019-08-09T20:18:02.350Z",
+        "u": {
+          "_id": "xh45w4y7oPW5SiMJu",
+          "username": "guest-4",
+          "name": "Marcos Defendi"
+        },
+        "_updatedAt": "2019-08-09T20:18:02.383Z",
+        "mentions": [],
+        "channels": [],
+        "newRoom": false,
+        "showConnecting": false
+      },
+      "metrics": {
+        "v": {
+          "lq": "2019-08-09T20:18:02.350Z"
+        }
+      },
+      "livechatData": {
+        "docId": "0310584343112"
+      },
+      "tags": [
+        "rocket",
+        "chat"
+      ],
+      "name": "Marcos Defendi"
+    }
+  ],
+  "count": 1,
+  "offset": 1,
+  "total": 7,
+  "success": true
+}

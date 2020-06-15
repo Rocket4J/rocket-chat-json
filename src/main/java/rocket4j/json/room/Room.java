@@ -73,4 +73,7 @@ public interface Room {
 
     @JsonProperty("ts")
     Optional<ZonedDateTime> timestamp();
+
+    @JsonProperty("lm")
+    Optional<ZonedDateTime> lastMessageTimestamp();
 }
