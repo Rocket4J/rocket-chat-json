@@ -14,55 +14,41 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.room;
+package rocket4j.json.invite;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
-import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
-import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableRoom.class)
-@JsonDeserialize(as = ImmutableRoom.class)
-@SuppressWarnings("immutables:subtype")
-public interface Room extends MinimalRoom {
+@JsonSerialize(as = ImmutableInvite.class)
+@JsonDeserialize(as = ImmutableInvite.class)
+public interface Invite {
+
+    @JsonProperty("_id")
+    String id();
+
+    int days();
+
+    int maxUses();
+
+    @JsonProperty("rid")
+    String roomId();
+
+    String userId();
+
+    ZonedDateTime createdAt();
+
+    @JsonProperty("expires")
+    Optional<ZonedDateTime> expiresAt();
 
     @JsonProperty("_updatedAt")
-    Optional<ZonedDateTime> updatedAt();
+    ZonedDateTime updatedAt();
 
-    Optional<List<String>> usernames();
+    int uses();
 
-    @JsonProperty("msgs")
-    Optional<Integer> messages();
-
-    Optional<Integer> usersCount();
-
-    @JsonProperty("default")
-    Optional<Boolean> defaultRoom();
-
-    @JsonProperty("u")
-    Optional<MinimalUser> user();
-
-    Optional<JsonNode> customFields();
-
-    @JsonProperty("ro")
-    Optional<Boolean> readOnly();
-
-    Optional<Boolean> broadcast();
-
-    Optional<Boolean> encrypted();
-
-    @JsonProperty("sysMes")
-    Optional<Boolean> systemMessage();
-
-    @JsonProperty("ts")
-    Optional<ZonedDateTime> timestamp();
-
-    @JsonProperty("lm")
-    Optional<ZonedDateTime> lastMessageTimestamp();
+    Optional<String> url();
 }

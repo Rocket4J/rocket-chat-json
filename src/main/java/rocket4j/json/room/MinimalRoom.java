@@ -16,53 +16,27 @@
  */
 package rocket4j.json.room;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.ZonedDateTime;
-import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
-import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableRoom.class)
-@JsonDeserialize(as = ImmutableRoom.class)
-@SuppressWarnings("immutables:subtype")
-public interface Room extends MinimalRoom {
+@JsonSerialize(as = ImmutableMinimalRoom.class)
+@JsonDeserialize(as = ImmutableMinimalRoom.class)
+public interface MinimalRoom {
 
-    @JsonProperty("_updatedAt")
-    Optional<ZonedDateTime> updatedAt();
+    @JsonAlias({"_id", "rid"})
+    String id();
 
-    Optional<List<String>> usernames();
+    //TODO: Figure out what the h*ck "t" stands for
+    String t();
 
-    @JsonProperty("msgs")
-    Optional<Integer> messages();
+    Optional<String> name();
 
-    Optional<Integer> usersCount();
-
-    @JsonProperty("default")
-    Optional<Boolean> defaultRoom();
-
-    @JsonProperty("u")
-    Optional<MinimalUser> user();
-
-    Optional<JsonNode> customFields();
-
-    @JsonProperty("ro")
-    Optional<Boolean> readOnly();
-
-    Optional<Boolean> broadcast();
-
-    Optional<Boolean> encrypted();
-
-    @JsonProperty("sysMes")
-    Optional<Boolean> systemMessage();
-
-    @JsonProperty("ts")
-    Optional<ZonedDateTime> timestamp();
-
-    @JsonProperty("lm")
-    Optional<ZonedDateTime> lastMessageTimestamp();
+    //TODO: Figure out what the h*ck "f" stands for.
+    @JsonProperty("fname")
+    Optional<String> fName();
 }
