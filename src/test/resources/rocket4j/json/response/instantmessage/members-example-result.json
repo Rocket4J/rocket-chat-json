@@ -1,0 +1,22 @@
+{
+  "members": [
+    {
+      "_id": "Q4GkX6RMepGDdQ7YJ",
+      "status": "online",
+      "name": "Marcos Defendi",
+      "utcOffset": -3,
+      "username": "marcos.defendi"
+    },
+    {
+      "_id": "rocket.cat",
+      "name": "Rocket.Cat",
+      "username": "rocket.cat",
+      "status": "online",
+      "utcOffset": 0
+    }
+  ],
+  "count": 2,
+  "offset": 0,
+  "total": 2,
+  "success": true
+}

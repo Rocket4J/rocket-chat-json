@@ -22,8 +22,11 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 import org.immutables.value.Value;
+import rocket4j.json.attachment.Attachment;
+import rocket4j.json.file.MinimalFile;
 import rocket4j.json.user.MinimalUser;
 
 @Value.Immutable
@@ -40,6 +43,7 @@ public interface Message {
     @JsonProperty("u")
     MinimalUser user();
 
+
     @JsonProperty("rid")
     String roomId();
 
@@ -53,52 +57,61 @@ public interface Message {
 
     List<String> channels();
 
-    Optional<File> file();
+    //TODO: Find out what t stands for
+    Optional<String> t();
+
+    Optional<Boolean> groupable();
+
+    Optional<MinimalFile> file();
 
     Optional<List<Attachment>> attachments();
 
     Optional<JsonNode> translations();
 
-    //Live chat specific Message data
-    Optional<String> token();
+    //Other stuff that I don't know where it really fits in...
+    Optional<Boolean> parseUrls();
+
+    Optional<List<String>> urls();
+
+    //Literally no idea what this is for or if there is actually a mappable object for it
+    Optional<JsonNode> bot();
+
+    Optional<Map<String, Reaction>> reactions();
+
+    Optional<Star> starred();
 
     Optional<String> alias();
+
+    Optional<String> emoji();
+
+    Optional<String> avatar();
+
+    //Edit data
+    Optional<MinimalUser> editedBy();
+
+    Optional<ZonedDateTime> editedAt();
+
+    //Live chat specific Message data
+    Optional<String> token();
 
     Optional<Boolean> newRoom();
 
     Optional<Boolean> showConnecting();
 
     @Value.Immutable
-    @JsonSerialize(as = ImmutableMessage.File.class)
-    @JsonDeserialize(as = ImmutableMessage.File.class)
-    interface File {
+    @JsonSerialize(as = ImmutableMessage.Reaction.class)
+    @JsonDeserialize(as = ImmutableMessage.Reaction.class)
+    interface Reaction {
 
-        @JsonProperty("_id")
-        String id();
-
-        String name();
-
-        String type();
+        List<String> usernames();
     }
 
     @Value.Immutable
-    @JsonSerialize(as = ImmutableMessage.Attachment.class)
-    @JsonDeserialize(as = ImmutableMessage.Attachment.class)
-    interface Attachment {
+    @JsonSerialize(as = ImmutableMessage.Star.class)
+    @JsonDeserialize(as = ImmutableMessage.Star.class)
+    interface Star {
 
-        @JsonProperty("ts")
-        ZonedDateTime timestamp();
-
-        String title();
-
-        @JsonProperty("title_link")
-        String titleLink();
-
-        @JsonProperty("title_link_download")
-        boolean titleLinkDownload();
-
-        String type();
-
-        String description();
+        @JsonProperty("_id")
+        String id();
     }
 }
