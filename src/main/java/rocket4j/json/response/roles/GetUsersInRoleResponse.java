@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.response.Response;
-import rocket4j.json.user.RoleUser;
+import rocket4j.json.user.BaseUserData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableGetUsersInRoleResponse.class)
@@ -29,5 +29,5 @@ import rocket4j.json.user.RoleUser;
 @SuppressWarnings("immutables:subtype")
 public interface GetUsersInRoleResponse extends Response {
 
-    List<RoleUser> users();
+    List<BaseUserData> users();
 }

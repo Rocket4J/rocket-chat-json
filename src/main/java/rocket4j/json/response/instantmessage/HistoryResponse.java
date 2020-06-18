@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.message.Message;
+import rocket4j.json.message.MessageData;
 import rocket4j.json.response.Response;
 
 @Value.Immutable
@@ -29,5 +29,5 @@ import rocket4j.json.response.Response;
 @SuppressWarnings("immutables:subtype")
 public interface HistoryResponse extends Response {
 
-    List<Message> messages();
+    List<MessageData> messages();
 }

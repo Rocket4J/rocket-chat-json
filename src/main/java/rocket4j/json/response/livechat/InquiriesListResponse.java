@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.livechat.Inquiry;
+import rocket4j.json.livechat.InquiryData;
 import rocket4j.json.pagination.PageData;
 import rocket4j.json.response.Response;
 
@@ -30,5 +30,5 @@ import rocket4j.json.response.Response;
 @SuppressWarnings("immutables:subtype")
 public interface InquiriesListResponse extends Response, PageData {
 
-    List<Inquiry> inquiries();
+    List<InquiryData> inquiries();
 }

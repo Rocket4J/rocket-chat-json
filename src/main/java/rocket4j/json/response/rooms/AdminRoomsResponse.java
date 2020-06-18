@@ -22,7 +22,7 @@ import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.pagination.PageData;
 import rocket4j.json.response.Response;
-import rocket4j.json.room.Room;
+import rocket4j.json.room.RoomData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableAdminRoomsResponse.class)
@@ -30,5 +30,5 @@ import rocket4j.json.room.Room;
 @SuppressWarnings("immutables:subtype")
 public interface AdminRoomsResponse extends Response, PageData {
 
-    List<Room> rooms();
+    List<RoomData> rooms();
 }

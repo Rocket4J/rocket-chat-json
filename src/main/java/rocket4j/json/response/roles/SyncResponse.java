@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.response.Response;
-import rocket4j.json.role.Role;
+import rocket4j.json.role.RoleData;
 
 @Value.Immutable
 @Value.Enclosing
@@ -38,8 +38,8 @@ public interface SyncResponse extends Response {
     @JsonDeserialize(as = ImmutableSyncResponse.Roles.class)
     interface Roles {
 
-        List<Role> update();
+        List<RoleData> update();
 
-        List<Role> remove();
+        List<RoleData> remove();
     }
 }

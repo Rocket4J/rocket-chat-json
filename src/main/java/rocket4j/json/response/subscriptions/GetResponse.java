@@ -24,7 +24,7 @@ import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
 import rocket4j.json.response.Response;
-import rocket4j.json.user.MinimalUser;
+import rocket4j.json.user.BaseUserData;
 
 @Value.Immutable
 @Value.Enclosing
@@ -57,7 +57,7 @@ public interface GetResponse extends Response {
         String rid();
 
         @JsonProperty("u")
-        MinimalUser user();
+        BaseUserData user();
 
         boolean open();
 

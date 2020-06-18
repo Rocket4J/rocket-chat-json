@@ -23,8 +23,9 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
 import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.meta.MetaData;
 import rocket4j.json.response.Response;
-import rocket4j.json.user.MinimalUser;
+import rocket4j.json.user.BaseUserData;
 
 @Value.Immutable
 @Value.Enclosing
@@ -66,15 +67,14 @@ public interface GetOneResponse extends Response {
 
         JsonNode customFields();
 
-
         // TODO: Figure out what the h*ck "f" is short for...
         String t();
 
         @JsonProperty("u")
-        MinimalUser user();
+        BaseUserData user();
 
-        // TODO: Figure out what the h*ck "ls" is short for... last seen maybe??? no clue.
-        ZonedDateTime ls();
+        @JsonProperty("ls")
+        ZonedDateTime lastSeen();
 
         @JsonProperty("_updatedAt")
         ZonedDateTime updatedAt();
@@ -96,17 +96,6 @@ public interface GetOneResponse extends Response {
         // TODO: Figure out what the h*ck "f" is short for...
         boolean f();
 
-        Meta meta();
-
-        @Value.Immutable
-        @JsonSerialize(as = ImmutableGetOneResponse.Meta.class)
-        @JsonDeserialize(as = ImmutableGetOneResponse.Meta.class)
-        interface Meta {
-            int revision();
-
-            long created();
-
-            int version();
-        }
+        MetaData meta();
     }
 }

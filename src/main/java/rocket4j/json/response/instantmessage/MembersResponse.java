@@ -22,7 +22,7 @@ import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.pagination.PageData;
 import rocket4j.json.response.Response;
-import rocket4j.json.user.Member;
+import rocket4j.json.user.InstantMessageUserData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableMembersResponse.class)
@@ -30,5 +30,5 @@ import rocket4j.json.user.Member;
 @SuppressWarnings("immutables:subtype")
 public interface MembersResponse extends Response, PageData {
 
-    List<Member> members();
+    List<InstantMessageUserData> members();
 }

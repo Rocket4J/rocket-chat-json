@@ -21,8 +21,8 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.response.Response;
-import rocket4j.json.room.Room;
-import rocket4j.json.user.MinimalUser;
+import rocket4j.json.room.RoomData;
+import rocket4j.json.user.BaseUserData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableSpotlightResponse.class)
@@ -30,7 +30,7 @@ import rocket4j.json.user.MinimalUser;
 @SuppressWarnings("immutables:subtype")
 public interface SpotlightResponse extends Response {
 
-    List<MinimalUser> users();
+    List<BaseUserData> users();
 
-    List<Room> rooms();
+    List<RoomData> rooms();
 }

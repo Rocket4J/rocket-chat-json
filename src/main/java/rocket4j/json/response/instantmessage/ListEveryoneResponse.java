@@ -18,13 +18,17 @@ package rocket4j.json.response.instantmessage;
 
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.channel.OthersInstantMessageChannelData;
 import rocket4j.json.pagination.PageData;
 import rocket4j.json.response.Response;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableListResponse.class)
-@JsonDeserialize(as = ImmutableListResponse.class)
+@JsonSerialize(as = ImmutableListEveryoneResponse.class)
+@JsonDeserialize(as = ImmutableListEveryoneResponse.class)
 @SuppressWarnings("immutables:subtype")
 public interface ListEveryoneResponse extends Response, PageData {
+
+    List<OthersInstantMessageChannelData> ims();
 }

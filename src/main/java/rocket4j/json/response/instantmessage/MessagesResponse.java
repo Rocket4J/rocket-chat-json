@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.message.Message;
+import rocket4j.json.message.MessageData;
 import rocket4j.json.pagination.PageData;
 import rocket4j.json.response.Response;
 
@@ -30,5 +30,5 @@ import rocket4j.json.response.Response;
 @SuppressWarnings("immutables:subtype")
 public interface MessagesResponse extends Response, PageData {
 
-    List<Message> messages();
+    List<MessageData> messages();
 }

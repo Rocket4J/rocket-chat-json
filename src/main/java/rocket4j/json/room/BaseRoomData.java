@@ -16,11 +16,15 @@
  */
 package rocket4j.json.room;
 
+import com.fasterxml.jackson.annotation.JsonAlias;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.ZonedDateTime;
+import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
+import rocket4j.json.message.MessageData;
 import rocket4j.json.user.BaseUserData;
 
 @Value.Immutable
@@ -28,7 +32,7 @@ import rocket4j.json.user.BaseUserData;
 @JsonDeserialize(as = ImmutableBaseRoomData.class)
 public interface BaseRoomData {
 
-    @JsonProperty("_id")
+    @JsonAlias({"_id", "rid"})
     String id();
 
     //TODO: Make this an enum once I figure out how to do that with jackson
@@ -37,6 +41,27 @@ public interface BaseRoomData {
 
     Optional<String> name();
 
+    Optional<String> fname();
+
     @JsonProperty("u")
     Optional<BaseUserData> user();
+
+    Optional<List<String>> usernames();
+
+    @JsonProperty("msgs")
+    Optional<Integer> messageCount();
+
+    @JsonProperty("usersCount")
+    Optional<Integer> userCount();
+
+    @JsonProperty("default")
+    Optional<Boolean> defaultRoom();
+
+    @JsonProperty("_updatedAt")
+    Optional<ZonedDateTime> updatedAt();
+
+    Optional<MessageData> lastMessage();
+
+    @JsonProperty("lm")
+    Optional<ZonedDateTime> lastMessageTimestamp();
 }
