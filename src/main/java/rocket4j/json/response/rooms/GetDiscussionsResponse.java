@@ -22,7 +22,7 @@ import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.pagination.PageData;
 import rocket4j.json.response.Response;
-import rocket4j.json.room.Discussion;
+import rocket4j.json.room.RoomData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableGetDiscussionsResponse.class)
@@ -30,5 +30,5 @@ import rocket4j.json.room.Discussion;
 @SuppressWarnings("immutables:subtype")
 public interface GetDiscussionsResponse extends Response, PageData {
 
-    List<Discussion> discussions();
+    List<RoomData> discussions();
 }

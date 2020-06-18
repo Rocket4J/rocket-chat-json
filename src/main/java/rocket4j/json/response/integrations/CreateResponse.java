@@ -19,7 +19,7 @@ package rocket4j.json.response.integrations;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
-import rocket4j.json.integration.Integration;
+import rocket4j.json.integration.IntegrationData;
 import rocket4j.json.response.Response;
 
 @Value.Immutable
@@ -28,5 +28,5 @@ import rocket4j.json.response.Response;
 @SuppressWarnings("immutables:subtype")
 public interface CreateResponse extends Response {
 
-    Integration integration();
+    IntegrationData integration();
 }

@@ -30,12 +30,12 @@ import rocket4j.json.response.Response;
 @SuppressWarnings("immutables:subtype")
 public interface GetMyAccountsResponse extends Response {
 
-    List<Account> accounts();
+    List<AccountData> accounts();
 
     @Value.Immutable
-    @JsonSerialize(as = ImmutableGetMyAccountsResponse.Account.class)
-    @JsonDeserialize(as = ImmutableGetMyAccountsResponse.Account.class)
-    interface Account {
+    @JsonSerialize(as = ImmutableGetMyAccountsResponse.AccountData.class)
+    @JsonDeserialize(as = ImmutableGetMyAccountsResponse.AccountData.class)
+    interface AccountData {
 
         @JsonProperty("_id")
         String id();

@@ -21,7 +21,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
 import rocket4j.json.response.Response;
-import rocket4j.json.room.Room;
+import rocket4j.json.room.RoomData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableGetResponse.class)
@@ -29,7 +29,7 @@ import rocket4j.json.room.Room;
 @SuppressWarnings("immutables:subtype")
 public interface GetResponse extends Response {
 
-    List<Room> update();
+    List<RoomData> update();
 
-    List<Room> remove();
+    List<RoomData> remove();
 }

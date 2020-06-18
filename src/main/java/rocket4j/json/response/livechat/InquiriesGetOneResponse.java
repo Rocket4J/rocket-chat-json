@@ -19,7 +19,7 @@ package rocket4j.json.response.livechat;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
-import rocket4j.json.livechat.Inquiry;
+import rocket4j.json.livechat.InquiryData;
 import rocket4j.json.response.Response;
 
 @Value.Immutable
@@ -28,5 +28,5 @@ import rocket4j.json.response.Response;
 @SuppressWarnings("immutables:subtype")
 public interface InquiriesGetOneResponse extends Response {
 
-    Inquiry inquiry();
+    InquiryData inquiry();
 }

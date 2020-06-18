@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.emoji.Emoji;
+import rocket4j.json.emoji.EmojiData;
 import rocket4j.json.response.Response;
 
 @Value.Immutable
@@ -37,8 +37,8 @@ public interface ListResponse extends Response {
     @JsonDeserialize(as = ImmutableListResponse.Emojis.class)
     interface Emojis {
 
-        List<Emoji> update();
+        List<EmojiData> update();
 
-        List<Emoji> remove();
+        List<EmojiData> remove();
     }
 }

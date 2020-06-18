@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 import rocket4j.json.response.Response;
-import rocket4j.json.room.Room;
+import rocket4j.json.room.RoomData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableInfoResponse.class)
@@ -28,5 +28,5 @@ import rocket4j.json.room.Room;
 @SuppressWarnings("immutables:subtype")
 public interface InfoResponse extends Response {
 
-    Room room();
+    RoomData room();
 }

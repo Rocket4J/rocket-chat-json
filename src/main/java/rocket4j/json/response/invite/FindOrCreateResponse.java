@@ -19,12 +19,12 @@ package rocket4j.json.response.invite;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
-import rocket4j.json.invite.Invite;
+import rocket4j.json.invite.InviteData;
 import rocket4j.json.response.Response;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableFindOrCreateResponse.class)
 @JsonDeserialize(as = ImmutableFindOrCreateResponse.class)
 @SuppressWarnings("immutables:subtype")
-public interface FindOrCreateResponse extends Response, Invite {
+public interface FindOrCreateResponse extends Response, InviteData {
 }

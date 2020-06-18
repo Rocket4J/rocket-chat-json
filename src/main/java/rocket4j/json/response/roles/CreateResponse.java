@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 import rocket4j.json.response.Response;
-import rocket4j.json.role.Role;
+import rocket4j.json.role.RoleData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableCreateResponse.class)
@@ -28,5 +28,5 @@ import rocket4j.json.role.Role;
 @SuppressWarnings("immutables:subtype")
 public interface CreateResponse extends Response {
 
-    Role role();
+    RoleData role();
 }

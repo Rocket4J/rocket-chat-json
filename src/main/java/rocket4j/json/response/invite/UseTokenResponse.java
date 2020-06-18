@@ -20,7 +20,7 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.immutables.value.Value;
 import rocket4j.json.response.Response;
-import rocket4j.json.room.MinimalRoom;
+import rocket4j.json.room.BaseRoomData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableUseTokenResponse.class)
@@ -28,5 +28,5 @@ import rocket4j.json.room.MinimalRoom;
 @SuppressWarnings("immutables:subtype")
 public interface UseTokenResponse extends Response {
 
-    MinimalRoom room();
+    BaseRoomData room();
 }
