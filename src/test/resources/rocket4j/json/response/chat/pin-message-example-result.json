@@ -1,0 +1,24 @@
+{
+  "message": {
+    "t": "message_pinned",
+    "rid": "GENERAL",
+    "ts": "2017-09-27T20:39:57.921Z",
+    "msg": "",
+    "u": {
+      "_id": "Z3cpiYN6CNK2oXWKv",
+      "username": "graywolf336"
+    },
+    "groupable": false,
+    "attachments": [
+      {
+        "text": "Hello",
+        "author_name": "graywolf336",
+        "author_icon": "/avatar/graywolf336?_dc=0",
+        "ts": "2017-09-27T19:36:01.683Z"
+      }
+    ],
+    "_updatedAt": "2017-09-27T20:39:57.921Z",
+    "_id": "hmzxXKSWmMkoQyiAd"
+  },
+  "success": true
+}

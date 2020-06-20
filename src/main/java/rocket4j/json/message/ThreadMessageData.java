@@ -23,44 +23,28 @@ import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 import org.immutables.value.Value;
-import rocket4j.json.user.BaseUserData;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableBaseMessageData.class)
-@JsonDeserialize(as = ImmutableBaseMessageData.class)
-public interface BaseMessageData {
+@JsonSerialize(as = ImmutableThreadMessageData.class)
+@JsonDeserialize(as = ImmutableThreadMessageData.class)
+@SuppressWarnings("immutables:subtype")
+public interface ThreadMessageData extends BaseMessageData {
 
-    @JsonProperty("_id")
-    String id();
+    // I *think* this is a list of user IDs? not really sure.
+    Optional<List<String>> replies();
 
-    @JsonProperty("rid")
-    String roomId();
+    @JsonProperty("tcount")
+    Optional<Integer> threadCount();
 
-    @JsonProperty("msg")
-    String content();
+    @JsonProperty("tlm")
+    Optional<ZonedDateTime> lastThreadMessage();
 
-    @JsonProperty("ts")
-    ZonedDateTime timestamp();
+    @JsonProperty("_deletedAt")
+    Optional<ZonedDateTime> deletedAt();
 
-    @JsonProperty("_updatedAt")
-    Optional<ZonedDateTime> updatedAt();
+    //TODO: Figure out what that stands for. I think it may be "Thread Message Id" but not sure.
+    Optional<String> tmid();
 
-    Optional<List<String>> channels();
-
-    Optional<List<BaseUserData>> mentions();
-
-    @JsonProperty("u")
-    BaseUserData author();
-
-    @JsonProperty("alias")
-    Optional<String> authorAlias(); // Legit no idea what this is freaking for.
-
-    //TODO: Convert to enum once I learn how to do it with jackson
-    @JsonProperty("t")
-    Optional<String> type();
-
-    // Edit related data
-    Optional<ZonedDateTime> editedAt();
-
-    Optional<BaseUserData> editedBy();
+    @JsonProperty("__collection__")
+    Optional<String> collection();
 }

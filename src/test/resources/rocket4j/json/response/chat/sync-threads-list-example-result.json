@@ -1,0 +1,68 @@
+{
+  "threads": {
+    "update": [
+      {
+        "_id": "J8Sqi5zPw62WgE4Md",
+        "rid": "GENERAL",
+        "msg": "test1",
+        "ts": "2019-04-16T18:16:00.614Z",
+        "u": {
+          "_id": "rocketchat.internal.admin.test",
+          "username": "rocketchat.internal.admin.test",
+          "name": "RocketChat Internal Admin Test"
+        },
+        "_updatedAt": "2019-04-16T18:17:09.749Z",
+        "mentions": [],
+        "channels": [],
+        "replies": [
+          "rocketchat.internal.admin.test"
+        ],
+        "tcount": 1,
+        "tlm": "2019-04-16T18:17:09.672Z"
+      },
+      {
+        "_id": "hbs2ZAjHH2JXrP7C7",
+        "rid": "GENERAL",
+        "msg": "another test",
+        "ts": "2019-04-16T18:13:20.403Z",
+        "u": {
+          "_id": "rocketchat.internal.admin.test",
+          "username": "rocketchat.internal.admin.test",
+          "name": "RocketChat Internal Admin Test"
+        },
+        "_updatedAt": "2019-04-16T18:30:46.722Z",
+        "mentions": [],
+        "channels": [],
+        "replies": [
+          "rocketchat.internal.admin.test"
+        ],
+        "tcount": 1,
+        "tlm": "2019-04-16T18:30:46.615Z"
+      }
+    ],
+    "remove": [
+      {
+        "_id": "GXwCSs4cx6456WBJk",
+        "rid": "GENERAL",
+        "msg": "test",
+        "ts": "2019-04-16T18:13:39.217Z",
+        "u": {
+          "_id": "rocketchat.internal.admin.test",
+          "username": "rocketchat.internal.admin.test",
+          "name": "RocketChat Internal Admin Test"
+        },
+        "_updatedAt": "2019-04-16T18:16:00.696Z",
+        "mentions": [],
+        "channels": [],
+        "replies": [
+          "rocketchat.internal.admin.test"
+        ],
+        "tcount": 1,
+        "tlm": "2019-04-16T18:16:00.614Z",
+        "_deletedAt": "2019-04-16T18:16:13.508Z",
+        "__collection__": "message"
+      }
+    ]
+  },
+  "success": true
+}

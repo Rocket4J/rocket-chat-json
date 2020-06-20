@@ -16,9 +16,11 @@
  */
 package rocket4j.json.message;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -36,6 +38,8 @@ public interface MessageData extends BaseMessageData {
 
     Optional<Boolean> groupable();
 
+    Optional<Boolean> unread();
+
     Optional<List<String>> urls();
 
     Optional<String> avatar();
@@ -43,20 +47,15 @@ public interface MessageData extends BaseMessageData {
     //TODO: Figure out why this is being sent.
     Optional<String> emoji();
 
-    Optional<List<BaseUserData>> mentions();
-
     Optional<Boolean> parseUrls();
 
     Optional<Map<String, String>> translations();
 
-    //TODO: Figure out what this is and if it can be modelled.
-    Optional<JsonNode> starred();
+    Optional<List<Star>> starred();
 
     Optional<List<AttachmentData>> attachments();
 
     Optional<Map<String, Reaction>> reactions();
-
-    Optional<List<String>> channels();
 
     //TODO: Figure out what this is and if it can be modelled. Right now, I haven't found any info at all
     Optional<JsonNode> bot();
@@ -69,11 +68,35 @@ public interface MessageData extends BaseMessageData {
 
     Optional<BaseFileData> file();
 
+    // Pin-related fields
+    Optional<Boolean> pinned();
+
+    Optional<ZonedDateTime> pinnedAt();
+
+    Optional<BaseUserData> pinnedBy();
+
+    //Snippet-related fields
+    Optional<String> snippetName();
+
+    Optional<Boolean> snippeted();
+
+    Optional<BaseUserData> snippetedBy();
+
+
     @Value.Immutable
     @JsonSerialize(as = ImmutableMessageData.Reaction.class)
     @JsonDeserialize(as = ImmutableMessageData.Reaction.class)
     interface Reaction {
 
         List<String> usernames();
+    }
+
+    @Value.Immutable
+    @JsonSerialize(as = ImmutableMessageData.Star.class)
+    @JsonDeserialize(as = ImmutableMessageData.Star.class)
+    interface Star {
+
+        @JsonProperty("_id")
+        String id();
     }
 }

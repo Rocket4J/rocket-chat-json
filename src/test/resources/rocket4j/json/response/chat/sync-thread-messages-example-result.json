@@ -1,0 +1,23 @@
+{
+  "messages": {
+    "update": [
+      {
+        "_id": "8BciMkvotHLpmpDEG",
+        "rid": "GENERAL",
+        "tmid": "hbs2ZAjHH2JXrP7C7",
+        "msg": "test",
+        "ts": "2019-04-16T18:30:46.615Z",
+        "u": {
+          "_id": "rocketchat.internal.admin.test",
+          "username": "rocketchat.internal.admin.test",
+          "name": "RocketChat Internal Admin Test"
+        },
+        "_updatedAt": "2019-04-16T18:30:46.669Z",
+        "mentions": [],
+        "channels": []
+      }
+    ],
+    "remove": []
+  },
+  "success": true
+}

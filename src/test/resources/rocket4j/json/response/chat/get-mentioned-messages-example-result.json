@@ -1,0 +1,28 @@
+{
+  "messages": [
+    {
+      "_id": "pN5jb4c9fhsDt8rfY",
+      "rid": "GENERAL",
+      "msg": "@rocketchat.internal.admin.test",
+      "ts": "2019-10-08T17:53:18.112Z",
+      "u": {
+        "_id": "TwHg3x3i6gGHuyFjX",
+        "username": "a",
+        "name": "a"
+      },
+      "_updatedAt": "2019-10-08T17:53:18.184Z",
+      "mentions": [
+        {
+          "_id": "rocketchat.internal.admin.test",
+          "name": "RocketChat Internal Admin Test",
+          "username": "rocketchat.internal.admin.test"
+        }
+      ],
+      "channels": []
+    }
+  ],
+  "count": 2,
+  "offset": 0,
+  "total": 2,
+  "success": true
+}

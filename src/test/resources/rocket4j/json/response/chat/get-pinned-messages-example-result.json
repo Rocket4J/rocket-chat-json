@@ -1,0 +1,48 @@
+{
+  "messages": [
+    {
+      "_id": "Srhca3mgthgjkEisJ",
+      "rid": "ByehQjC44FwMeiLbX",
+      "msg": "I pinned this message",
+      "ts": "2019-03-23T00:53:24.388Z",
+      "u": {
+        "_id": "aobEdbYhXfu5hkeqG",
+        "username": "user",
+        "name": "User"
+      },
+      "mentions": [],
+      "channels": [],
+      "_updatedAt": "2019-03-23T00:53:28.813Z",
+      "pinned": true,
+      "pinnedAt": "2019-03-23T00:53:28.813Z",
+      "pinnedBy": {
+        "_id": "aobEdbYhXfu5hkeqG",
+        "username": "user"
+      }
+    },
+    {
+      "_id": "m3AZcKrvayKEZSKJN",
+      "rid": "GENERAL",
+      "msg": "Ola",
+      "ts": "2019-03-23T00:53:50.974Z",
+      "u": {
+        "_id": "aobEdbYhXfu5hkeqG",
+        "username": "user",
+        "name": "user"
+      },
+      "mentions": [],
+      "channels": [],
+      "_updatedAt": "2019-03-23T00:53:53.649Z",
+      "pinned": true,
+      "pinnedAt": "2019-03-23T00:53:53.649Z",
+      "pinnedBy": {
+        "_id": "aobEdbYhXfu5hkeqG",
+        "username": "user"
+      }
+    }
+  ],
+  "count": 2,
+  "offset": 0,
+  "total": 2,
+  "success": true
+}

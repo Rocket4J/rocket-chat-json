@@ -27,9 +27,11 @@
       },
       "mentions": [],
       "channels": [],
-      "starred": {
-        "_id": "KPkEYwKKBKZnEEPpt"
-      }
+      "starred": [
+        {
+          "_id": "KPkEYwKKBKZnEEPpt"
+        }
+      ]
     },
     {
       "_id": "id-1538701845987",

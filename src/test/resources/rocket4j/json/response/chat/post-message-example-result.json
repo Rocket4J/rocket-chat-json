@@ -1,0 +1,19 @@
+{
+  "ts": 1481748965123,
+  "channel": "general",
+  "message": {
+    "alias": "",
+    "msg": "This is a test!",
+    "parseUrls": true,
+    "groupable": false,
+    "ts": "2016-12-14T20:56:05.117Z",
+    "u": {
+      "_id": "y65tAmHs93aDChMWu",
+      "username": "graywolf336"
+    },
+    "rid": "GENERAL",
+    "_updatedAt": "2016-12-14T20:56:05.119Z",
+    "_id": "jC9chsFddTvsbFQG7"
+  },
+  "success": true
+}

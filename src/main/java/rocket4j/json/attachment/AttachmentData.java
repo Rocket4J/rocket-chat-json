@@ -48,13 +48,13 @@ public interface AttachmentData {
     Optional<String> messageLink();
 
     //Title stuffs
-    String title();
+    Optional<String> title();
 
     @JsonProperty("title_link")
-    String titleLink();
+    Optional<String> titleLink();
 
     @JsonProperty("title_link_download")
-    boolean titleLinkDownload();
+    Optional<Boolean> titleLinkDownload();
 
     //Thumbnail stuffs
     @JsonProperty("thumb_url")

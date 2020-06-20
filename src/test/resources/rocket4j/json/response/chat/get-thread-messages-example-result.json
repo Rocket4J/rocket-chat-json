@@ -1,0 +1,42 @@
+{
+  "messages": [
+    {
+      "_id": "gcGai9bRREqokjyPc",
+      "rid": "GENERAL",
+      "msg": "Test",
+      "ts": "2019-04-08T13:15:52.017Z",
+      "u": {
+        "_id": "p4a8YxvLQEHmiBKTS",
+        "username": "marcos.defendi",
+        "name": "Marcos Defendi"
+      },
+      "_updatedAt": "2019-04-08T14:40:27.789Z",
+      "mentions": [],
+      "channels": [],
+      "replies": [
+        "p4a8YxvLQEHmiBKTS"
+      ],
+      "tcount": 5,
+      "tlm": "2019-04-08T14:40:27.724Z"
+    },
+    {
+      "_id": "GfhiiJjcjKFyYMuMY",
+      "rid": "GENERAL",
+      "tmid": "gcGai9bRREqokjyPc",
+      "msg": "This is a test!",
+      "ts": "2019-04-08T13:20:22.238Z",
+      "u": {
+        "_id": "p4a8YxvLQEHmiBKTS",
+        "username": "marcos.defendi",
+        "name": "Marcos Defendi"
+      },
+      "_updatedAt": "2019-04-08T13:20:22.265Z",
+      "mentions": [],
+      "channels": []
+    }
+  ],
+  "count": 2,
+  "offset": 0,
+  "total": 2,
+  "success": true
+}

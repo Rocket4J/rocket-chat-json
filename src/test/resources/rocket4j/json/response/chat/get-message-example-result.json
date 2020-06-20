@@ -1,0 +1,13 @@
+{
+  "message": {
+    "_id": "7aDSXtjMA3KPLxLjt",
+    "rid": "GENERAL",
+    "msg": "This is a test!",
+    "ts": "2016-12-14T20:56:05.117Z",
+    "u": {
+      "_id": "y65tAmHs93aDChMWu",
+      "username": "graywolf336"
+    }
+  },
+  "success": true
+}

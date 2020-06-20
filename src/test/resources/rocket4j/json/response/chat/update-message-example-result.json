@@ -1,0 +1,19 @@
+{
+  "message": {
+    "_id": "qGdhTGDnhMLJPQYY8",
+    "rid": "GENERAL",
+    "msg": "gif+ testing update",
+    "ts": "2017-01-05T17:06:14.403Z",
+    "u": {
+      "_id": "R4jgcQaQhvvK6K3iY",
+      "username": "graywolf336"
+    },
+    "_updatedAt": "2017-01-05T19:42:20.433Z",
+    "editedAt": "2017-01-05T19:42:20.431Z",
+    "editedBy": {
+      "_id": "R4jgcQaQhvvK6K3iY",
+      "username": "graywolf336"
+    }
+  },
+  "success": true
+}

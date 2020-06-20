@@ -19,48 +19,25 @@ package rocket4j.json.message;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.ZonedDateTime;
-import java.util.List;
-import java.util.Optional;
 import org.immutables.value.Value;
 import rocket4j.json.user.BaseUserData;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableBaseMessageData.class)
-@JsonDeserialize(as = ImmutableBaseMessageData.class)
-public interface BaseMessageData {
+@JsonSerialize(as = ImmutableReadReceiptData.class)
+@JsonDeserialize(as = ImmutableReadReceiptData.class)
+public interface ReadReceiptData {
 
     @JsonProperty("_id")
     String id();
 
-    @JsonProperty("rid")
     String roomId();
 
-    @JsonProperty("msg")
-    String content();
+    String userId();
+
+    String messageId();
 
     @JsonProperty("ts")
-    ZonedDateTime timestamp();
+    String timestamp();
 
-    @JsonProperty("_updatedAt")
-    Optional<ZonedDateTime> updatedAt();
-
-    Optional<List<String>> channels();
-
-    Optional<List<BaseUserData>> mentions();
-
-    @JsonProperty("u")
-    BaseUserData author();
-
-    @JsonProperty("alias")
-    Optional<String> authorAlias(); // Legit no idea what this is freaking for.
-
-    //TODO: Convert to enum once I learn how to do it with jackson
-    @JsonProperty("t")
-    Optional<String> type();
-
-    // Edit related data
-    Optional<ZonedDateTime> editedAt();
-
-    Optional<BaseUserData> editedBy();
+    BaseUserData user();
 }

@@ -1,0 +1,23 @@
+{
+  "messages": [
+    {
+      "_id": "WSxSpajNjbNZDkGmq",
+      "t": "discussion-created",
+      "rid": "GENERAL",
+      "ts": "2019-12-03T17:53:44.600Z",
+      "msg": "d",
+      "u": {
+        "_id": "CaevAPDbXN252kyXa",
+        "username": "marcos.defendi"
+      },
+      "groupable": false,
+      "drid": "iQyCSjH2kixh46R7v",
+      "attachments": [],
+      "_updatedAt": "2019-12-03T17:53:44.600Z"
+    }
+  ],
+  "count": 1,
+  "offset": 0,
+  "total": 4,
+  "success": true
+}

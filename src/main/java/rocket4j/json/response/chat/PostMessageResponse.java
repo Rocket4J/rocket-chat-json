@@ -14,53 +14,26 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.message;
+package rocket4j.json.response.chat;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.time.ZonedDateTime;
-import java.util.List;
-import java.util.Optional;
 import org.immutables.value.Value;
-import rocket4j.json.user.BaseUserData;
+import rocket4j.json.message.MessageData;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableBaseMessageData.class)
-@JsonDeserialize(as = ImmutableBaseMessageData.class)
-public interface BaseMessageData {
-
-    @JsonProperty("_id")
-    String id();
-
-    @JsonProperty("rid")
-    String roomId();
-
-    @JsonProperty("msg")
-    String content();
+@JsonSerialize(as = ImmutablePostMessageResponse.class)
+@JsonDeserialize(as = ImmutablePostMessageResponse.class)
+@SuppressWarnings("immutables:subtype")
+public interface PostMessageResponse extends Response {
 
     @JsonProperty("ts")
     ZonedDateTime timestamp();
 
-    @JsonProperty("_updatedAt")
-    Optional<ZonedDateTime> updatedAt();
+    String channel();
 
-    Optional<List<String>> channels();
-
-    Optional<List<BaseUserData>> mentions();
-
-    @JsonProperty("u")
-    BaseUserData author();
-
-    @JsonProperty("alias")
-    Optional<String> authorAlias(); // Legit no idea what this is freaking for.
-
-    //TODO: Convert to enum once I learn how to do it with jackson
-    @JsonProperty("t")
-    Optional<String> type();
-
-    // Edit related data
-    Optional<ZonedDateTime> editedAt();
-
-    Optional<BaseUserData> editedBy();
+    MessageData message();
 }
