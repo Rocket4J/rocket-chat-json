@@ -14,4 +14,4 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response.assets;
+package rocket4j.json.subscription;
