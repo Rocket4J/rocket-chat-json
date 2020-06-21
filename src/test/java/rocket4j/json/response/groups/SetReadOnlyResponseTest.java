@@ -14,21 +14,26 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.channel;
+package rocket4j.json.response.groups;
 
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
-import java.util.Optional;
-import org.immutables.value.Value;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import rocket4j.json.JsonFile;
+import rocket4j.json.JsonTests;
 
-@Value.Immutable
-@JsonSerialize(as = ImmutableMyInstantMessageChannelData.class)
-@JsonDeserialize(as = ImmutableMyInstantMessageChannelData.class)
-@SuppressWarnings("immutables:subtype")
-public interface MyInstantMessageChannelData extends BaseChannelData {
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-    Optional<String> username();
+@JsonTests
+public final class SetReadOnlyResponseTest {
 
-    Optional<List<String>> usernames();
+    private final ObjectMapper objectMapper;
+
+    public SetReadOnlyResponseTest(final ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
+    @Test
+    void deserializeInfoResponseTest(@JsonFile("set-read-only-example-result.json") final String json) {
+        assertDoesNotThrow(() -> this.objectMapper.readValue(json, SetReadOnlyResponse.class));
+    }
 }

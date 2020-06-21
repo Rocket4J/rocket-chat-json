@@ -20,9 +20,9 @@ import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.channel.OthersInstantMessageChannelData;
 import rocket4j.json.pagination.PageData;
 import rocket4j.json.response.Response;
+import rocket4j.json.room.RoomData;
 
 @Value.Immutable
 @JsonSerialize(as = ImmutableListEveryoneResponse.class)
@@ -30,5 +30,5 @@ import rocket4j.json.response.Response;
 @SuppressWarnings("immutables:subtype")
 public interface ListEveryoneResponse extends Response, PageData {
 
-    List<OthersInstantMessageChannelData> ims();
+    List<RoomData> ims();
 }

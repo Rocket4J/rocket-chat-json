@@ -14,46 +14,20 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.channel;
+package rocket4j.json.response.groups;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.time.ZonedDateTime;
-import java.util.Optional;
+import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.message.MessageData;
+import rocket4j.json.pagination.PageData;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableBaseChannelData.class)
-@JsonDeserialize(as = ImmutableBaseChannelData.class)
-public interface BaseChannelData {
-
-    @JsonProperty("_id")
-    String id();
-
-    //TODO: Figure out what the hell t stands for
-    String t();
-
-    @JsonProperty("msgs")
-    int messages();
-
-    @JsonProperty("_updatedAt")
-    ZonedDateTime updatedAt();
-
-    @JsonProperty("ts")
-    ZonedDateTime timestamp();
-
-    //Optionals
-    Optional<String> name();
-
-    Optional<String> topic();
-
-    @JsonProperty("ro")
-    Optional<Boolean> readOnly();
-
-    @JsonProperty("sysMes")
-    Optional<Boolean> systemMessage();
-
-    @JsonProperty("lm")
-    Optional<ZonedDateTime> lastMessage();
+@JsonSerialize(as = ImmutableMessagesResponse.class)
+@JsonDeserialize(as = ImmutableMessagesResponse.class)
+@SuppressWarnings("immutables:subtype")
+public interface MessagesResponse extends Response, PageData {
+    List<MessageData> messages();
 }

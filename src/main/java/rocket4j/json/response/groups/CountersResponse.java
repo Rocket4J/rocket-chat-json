@@ -14,23 +14,38 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response;
+package rocket4j.json.response.groups;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.Optional;
+import java.time.ZonedDateTime;
 import org.immutables.value.Value;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableResponse.class)
-@JsonDeserialize(as = ImmutableResponse.class)
-public interface Response {
+@JsonSerialize(as = ImmutableCountersResponse.class)
+@JsonDeserialize(as = ImmutableCountersResponse.class)
+@SuppressWarnings("immutables:subtype")
+public interface CountersResponse extends Response {
 
-    @JsonProperty("success")
-    boolean successful();
+    boolean joined();
 
-    Optional<String> error();
+    @JsonProperty("members")
+    int memberCount();
 
-    Optional<String> errorType();
+    @JsonProperty("unreads")
+    int unreadMessageCount();
+
+    @JsonProperty("unreadsFrom")
+    ZonedDateTime unreadStartTimestamp();
+
+    @JsonProperty("msgs")
+    int messageCount();
+
+    @JsonProperty("latest")
+    ZonedDateTime latestMessageTimestamp();
+
+    @JsonProperty("userMentions")
+    int userMentionCount();
 }

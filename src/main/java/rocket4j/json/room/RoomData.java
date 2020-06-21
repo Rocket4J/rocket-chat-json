@@ -55,4 +55,6 @@ public interface RoomData extends BaseRoomData {
     Optional<Boolean> encrypted();
 
     Optional<JsonNode> customFields();
+
+    Optional<Boolean> joinCodeRequired();
 }

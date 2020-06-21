@@ -46,6 +46,8 @@ public interface BaseRoomData {
     @JsonProperty("u")
     Optional<BaseUserData> user();
 
+    Optional<String> username();
+
     Optional<List<String>> usernames();
 
     @JsonProperty("msgs")

@@ -14,23 +14,26 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response;
+package rocket4j.json.response.groups;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.Optional;
-import org.immutables.value.Value;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import org.junit.jupiter.api.Test;
+import rocket4j.json.JsonFile;
+import rocket4j.json.JsonTests;
 
-@Value.Immutable
-@JsonSerialize(as = ImmutableResponse.class)
-@JsonDeserialize(as = ImmutableResponse.class)
-public interface Response {
+import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
-    @JsonProperty("success")
-    boolean successful();
+@JsonTests
+public final class SetTopicResponseTest {
 
-    Optional<String> error();
+    private final ObjectMapper objectMapper;
 
-    Optional<String> errorType();
+    public SetTopicResponseTest(final ObjectMapper objectMapper) {
+        this.objectMapper = objectMapper;
+    }
+
+    @Test
+    void deserializeInfoResponseTest(@JsonFile("set-topic-example-result.json") final String json) {
+        assertDoesNotThrow(() -> this.objectMapper.readValue(json, SetTopicResponse.class));
+    }
 }

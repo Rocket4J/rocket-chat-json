@@ -1,0 +1,20 @@
+{
+  "group": {
+    "_id": "ByehQjC44FwMeiLbX",
+    "name": "invite-me",
+    "t": "p",
+    "usernames": [
+      "testing2"
+    ],
+    "msgs": 0,
+    "u": {
+      "_id": "aobEdbYhXfu5hkeqG",
+      "username": "testing1"
+    },
+    "ts": "2016-12-09T15:08:58.042Z",
+    "ro": false,
+    "sysMes": true,
+    "_updatedAt": "2016-12-09T15:22:40.656Z"
+  },
+  "success": true
+}

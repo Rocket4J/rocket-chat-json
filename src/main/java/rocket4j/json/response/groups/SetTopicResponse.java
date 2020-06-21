@@ -14,23 +14,18 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.channel;
+package rocket4j.json.response.groups;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.List;
 import org.immutables.value.Value;
-import rocket4j.json.user.BaseUserData;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableOthersInstantMessageChannelData.class)
-@JsonDeserialize(as = ImmutableOthersInstantMessageChannelData.class)
+@JsonSerialize(as = ImmutableSetTopicResponse.class)
+@JsonDeserialize(as = ImmutableSetTopicResponse.class)
 @SuppressWarnings("immutables:subtype")
-public interface OthersInstantMessageChannelData extends BaseChannelData {
+public interface SetTopicResponse extends Response {
 
-    List<String> usernames();
-
-    @JsonProperty("u")
-    BaseUserData user();
+    String topic();
 }

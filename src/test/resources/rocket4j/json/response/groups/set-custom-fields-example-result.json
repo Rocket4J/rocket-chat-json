@@ -1,0 +1,22 @@
+{
+  "group": {
+    "_id": "euzoT67Gx6nXcn66M",
+    "name": "channel.cf.1518990680083",
+    "fname": "channel.cf.1518990680083",
+    "t": "p",
+    "msgs": 0,
+    "u": {
+      "_id": "ew28FnZqipDpvKw3R",
+      "username": "rocketchat.internal.admin.test"
+    },
+    "customFields": {
+      "company": "sell-and-more"
+    },
+    "ts": "2018-02-18T21:51:20.091Z",
+    "ro": false,
+    "sysMes": true,
+    "_updatedAt": "2018-02-23T11:27:01.411Z",
+    "username": "rocketchat.internal.admin.test"
+  },
+  "success": true
+}

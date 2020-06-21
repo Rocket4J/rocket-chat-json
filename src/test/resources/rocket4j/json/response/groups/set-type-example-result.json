@@ -1,0 +1,23 @@
+{
+  "group": {
+    "_id": "ByehQjC44FwMeiLbX",
+    "name": "testing0",
+    "t": "c",
+    "msgs": 0,
+    "u": {
+      "_id": "aiPqNoGkjpNDiRx6d",
+      "username": "goose160"
+    },
+    "ts": "2017-01-05T18:02:50.754Z",
+    "ro": false,
+    "sysMes": true,
+    "_updatedAt": "2017-01-05T19:02:24.429Z",
+    "usernames": [
+      "goose160",
+      "graywolf336"
+    ],
+    "joinCodeRequired": true,
+    "muted": []
+  },
+  "success": true
+}

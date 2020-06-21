@@ -14,4 +14,19 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.channel;
+package rocket4j.json.response.groups;
+
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.immutables.value.Value;
+import rocket4j.json.response.Response;
+import rocket4j.json.room.RoomData;
+
+@Value.Immutable
+@JsonSerialize(as = ImmutableInfoResponse.class)
+@JsonDeserialize(as = ImmutableInfoResponse.class)
+@SuppressWarnings("immutables:subtype")
+public interface InfoResponse extends Response {
+
+    RoomData group();
+}

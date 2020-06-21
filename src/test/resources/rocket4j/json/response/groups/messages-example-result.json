@@ -1,0 +1,47 @@
+{
+  "messages": [
+    {
+      "_id": "CeXwh5eBbdrtvnqG6",
+      "rid": "agh2Sucgb54RQ8dDo",
+      "msg": "s",
+      "ts": "2018-10-05T13:48:21.616Z",
+      "u": {
+        "_id": "KPkEYwKKBKZnEEPpt",
+        "username": "marcos.defendi",
+        "name": "Marcos Defendi"
+      },
+      "_updatedAt": "2018-10-05T13:48:49.535Z",
+      "reactions": {
+        ":frowning2:": {
+          "usernames": [
+            "marcos.defendi"
+          ]
+        }
+      },
+      "mentions": [],
+      "channels": [],
+      "starred": [
+        {
+          "_id": "KPkEYwKKBKZnEEPpt"
+        }
+      ]
+    },
+    {
+      "_id": "MrAeupRiF9TvhMesK",
+      "t": "room_changed_privacy",
+      "rid": "agh2Sucgb54RQ8dDo",
+      "ts": "2018-10-05T00:11:16.998Z",
+      "msg": "Private Group",
+      "u": {
+        "_id": "rocketchat.internal.admin.test",
+        "username": "rocketchat.internal.admin.test"
+      },
+      "groupable": false,
+      "_updatedAt": "2018-10-05T00:11:16.998Z"
+    }
+  ],
+  "count": 2,
+  "offset": 0,
+  "total": 2,
+  "success": true
+}

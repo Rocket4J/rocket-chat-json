@@ -14,23 +14,21 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response;
+package rocket4j.json.response.groups;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.Optional;
+import java.util.List;
 import org.immutables.value.Value;
+import rocket4j.json.file.FileData;
+import rocket4j.json.pagination.PageData;
+import rocket4j.json.response.Response;
 
 @Value.Immutable
-@JsonSerialize(as = ImmutableResponse.class)
-@JsonDeserialize(as = ImmutableResponse.class)
-public interface Response {
+@JsonSerialize(as = ImmutableFilesResponse.class)
+@JsonDeserialize(as = ImmutableFilesResponse.class)
+@SuppressWarnings("immutables:subtype")
+public interface FilesResponse extends Response, PageData {
 
-    @JsonProperty("success")
-    boolean successful();
-
-    Optional<String> error();
-
-    Optional<String> errorType();
+    List<FileData> files();
 }

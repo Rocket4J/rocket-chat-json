@@ -1,0 +1,5 @@
+{
+  "success": false,
+  "error": "User is already a leader [error-user-already-leader]",
+  "errorType": "error-user-already-leader"
+}

@@ -14,23 +14,4 @@
  * You should have received a copy of the GNU Lesser General Public License
  * along with rocket-chat-json.  If not, see <https://www.gnu.org/licenses/>.
  */
-package rocket4j.json.response;
-
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
-import com.fasterxml.jackson.databind.annotation.JsonSerialize;
-import java.util.Optional;
-import org.immutables.value.Value;
-
-@Value.Immutable
-@JsonSerialize(as = ImmutableResponse.class)
-@JsonDeserialize(as = ImmutableResponse.class)
-public interface Response {
-
-    @JsonProperty("success")
-    boolean successful();
-
-    Optional<String> error();
-
-    Optional<String> errorType();
-}
+package rocket4j.json.response.groups;

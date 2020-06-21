@@ -1,0 +1,23 @@
+{
+  "group": {
+    "_id": "ByehQjC44FwMeiLbX",
+    "name": "testing",
+    "fname": "testing",
+    "t": "p",
+    "msgs": 0,
+    "usersCount": 2,
+    "u": {
+      "_id": "HKKPmF8rZh45GMHWH",
+      "username": "marcos.defendi"
+    },
+    "customFields": {},
+    "broadcast": false,
+    "encrypted": false,
+    "ts": "2020-05-21T13:16:24.749Z",
+    "ro": false,
+    "default": false,
+    "sysMes": true,
+    "_updatedAt": "2020-05-21T13:16:24.772Z"
+  },
+  "success": true
+}

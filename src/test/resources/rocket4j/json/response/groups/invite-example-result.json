@@ -1,0 +1,20 @@
+{
+  "group": {
+    "_id": "ByehQjC44FwMeiLbX",
+    "ts": "2016-11-30T21:23:04.737Z",
+    "t": "p",
+    "name": "testing",
+    "usernames": [
+      "testing",
+      "testing1"
+    ],
+    "u": {
+      "_id": "aobEdbYhXfu5hkeqG",
+      "username": "testing1"
+    },
+    "msgs": 1,
+    "_updatedAt": "2016-12-09T12:50:51.575Z",
+    "lm": "2016-12-09T12:50:51.555Z"
+  },
+  "success": true
+}

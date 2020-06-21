@@ -1,0 +1,10 @@
+{
+  "moderators": [
+    {
+      "_id": "rocket.cat",
+      "username": "rocket.cat",
+      "name": "Rocket.Cat"
+    }
+  ],
+  "success": true
+}

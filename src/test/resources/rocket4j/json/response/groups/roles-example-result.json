@@ -1,0 +1,17 @@
+{
+  "roles": [
+    {
+      "rid": "BaE62jfDLXK3Xo6BA",
+      "u": {
+        "_id": "BkNkw3iKgNyhMbPyW",
+        "username": "ronnie.dio",
+        "name": "Ronnie James Dio"
+      },
+      "roles": [
+        "moderator"
+      ],
+      "_id": "ehPuGyZBedznJsQHp"
+    }
+  ],
+  "success": true
+}
